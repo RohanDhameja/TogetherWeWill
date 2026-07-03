@@ -1,0 +1,82 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Education",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {},
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\": \"b2cb0200-d1ac-4f4a-9923-1ea516bc1dcc\", \"columns\": [{\"UUID\": \"5ab579ba-fe60-497f-ae7b-fba8e0b30128\", \"columnName\": \"Column 1\", \"columnKey\": \"col1\", \"columnWidth\": \"12\", \"seedComponents\": []}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "dxpStyle": {}
+                      },
+                      "definition": "c:twwContentPages",
+                      "id": "ed23abc4-9199-45ab-bc8e-ca4c66a84d7c",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "5ab579ba-fe60-497f-ae7b-fba8e0b30128",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "b2cb0200-d1ac-4f4a-9923-1ea516bc1dcc",
+              "type": "component"
+            }
+          ],
+          "id": "e8666578-1efa-49b5-b1c3-f7ff48be6666",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "dxpStyle": {},
+                "pageTitle": "Education",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "9007e35f-c6c6-468b-b064-9e75342f7840",
+              "type": "component"
+            }
+          ],
+          "id": "37ff9822-19fd-450e-b536-b8fe8b203086",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "029871d9-0ed1-4cbf-9697-c99583830e80",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "custom-initiative-education"
+  },
+  "urlName": "initiative-education"
+}

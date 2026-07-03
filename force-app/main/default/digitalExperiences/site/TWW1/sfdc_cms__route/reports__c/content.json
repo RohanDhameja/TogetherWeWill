@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "Reports",
+  "contentBody": {
+    "activeViewId": "Reports",
+    "configurationTags": [],
+    "pageAccess": "Public",
+    "routeType": "custom-reports",
+    "urlPrefix": "reports"
+  },
+  "urlName": "reports"
+}

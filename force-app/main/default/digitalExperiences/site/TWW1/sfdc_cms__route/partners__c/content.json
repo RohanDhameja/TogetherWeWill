@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "Partners",
+  "contentBody": {
+    "activeViewId": "Partners",
+    "configurationTags": [],
+    "pageAccess": "Public",
+    "routeType": "custom-partners",
+    "urlPrefix": "partners"
+  },
+  "urlName": "partners"
+}

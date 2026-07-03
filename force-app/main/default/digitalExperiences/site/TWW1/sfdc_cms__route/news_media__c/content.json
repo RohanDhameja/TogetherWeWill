@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "News and Media",
+  "contentBody": {
+    "activeViewId": "NewsMedia",
+    "configurationTags": [],
+    "pageAccess": "Public",
+    "routeType": "custom-news-media",
+    "urlPrefix": "news-media"
+  },
+  "urlName": "news-media"
+}

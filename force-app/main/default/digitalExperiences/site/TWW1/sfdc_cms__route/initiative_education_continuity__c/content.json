@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "Education Continuity Program",
+  "contentBody": {
+    "activeViewId": "InitiativeEducationContinuity",
+    "configurationTags": [],
+    "pageAccess": "Public",
+    "routeType": "custom-initiative-education-continuity-program",
+    "urlPrefix": "initiatives/education-continuity-program"
+  },
+  "urlName": "initiative-education-continuity-program"
+}

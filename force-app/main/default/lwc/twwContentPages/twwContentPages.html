@@ -1,0 +1,508 @@
+<template>
+    <header class="navbar">
+        <div class="nav-container">
+            <a class="nav-logo" href="/togetherwewill/">
+                <img src={foundationLogo} alt="TWW Logo" class="logo-img" />
+                <span class="logo-text">Together We Will</span>
+            </a>
+            <nav class="nav-menu">
+                <template for:each={navItems} for:item="item">
+                    <a key={item.key} href={item.href} class={item.className}>{item.label}</a>
+                </template>
+            </nav>
+            <button class="btn-nav-donate" onclick={handleDonate}>Donate</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero" style={heroStyle}>
+            <div class="page-hero-content">
+                <span class="section-label section-label-light">{page.label}</span>
+                <h1>{page.title}</h1>
+                <p>{page.intro}</p>
+                <div class="hero-stats">
+                    <template for:each={page.stats} for:item="stat">
+                        <div class="hero-stat" key={stat.id}>
+                            <span>{stat.value}</span>
+                            <small>{stat.label}</small>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </section>
+
+        <template if:true={isAbout}>
+            <section class="content-section">
+                <div class="container split-grid">
+                    <article>
+                        <span class="section-label">Purpose</span>
+                        <h2>We exist to bridge opportunity gaps</h2>
+                        <p>
+                            India is home to millions of children, youth, and families who continue to face barriers in accessing quality education, healthcare, livelihood opportunities, and safe environments to thrive.
+                        </p>
+                        <p>
+                            TWW was established on a simple belief: sustainable change happens when communities, volunteers, corporates, and institutions come together to address these challenges holistically.
+                        </p>
+                    </article>
+                    <aside class="photo-card">
+                        <img src={aboutImage} alt="Together We Will community activity" />
+                    </aside>
+                </div>
+            </section>
+
+            <section class="content-section muted">
+                <div class="container two-card-grid">
+                    <article class="statement-card">
+                        <img src={visionImage} alt="Vision graphic" />
+                        <h3>Our Vision</h3>
+                        <p>To create a world where every child and community has access to opportunities, support, and resources needed to live with dignity, realize their full potential, and contribute meaningfully to society.</p>
+                    </article>
+                    <article class="statement-card">
+                        <img src={missionImage} alt="Mission graphic" />
+                        <h3>Our Mission</h3>
+                        <p>To empower underprivileged children and communities through initiatives in child welfare, education, health, skill development, and community transformation by mobilizing volunteers, fostering partnerships, and creating sustainable opportunities that enable individuals to lead dignified, self-reliant, and fulfilling lives.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="container">
+                    <span class="section-label">Our Core Values</span>
+                    <h2>The principles that guide our work</h2>
+                    <div class="value-card-grid">
+                        <template for:each={coreValues} for:item="value">
+                            <article class="value-card" key={value.id}>
+                                <h3>{value.title}</h3>
+                                <p>{value.description}</p>
+                            </article>
+                        </template>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section muted">
+                <div class="container">
+                    <span class="section-label">Our Journey So Far</span>
+                    <h2>Milestones of collective action</h2>
+                    <div class="journey-grid">
+                        <template for:each={journeyItems} for:item="item">
+                            <div class="list-item" key={item}>{item}</div>
+                        </template>
+                    </div>
+                </div>
+            </section>
+        </template>
+
+        <template if:true={isModel}>
+            <section class="content-section">
+                <div class="container">
+                    <span class="section-label">How We Work</span>
+                    <h2>A sustainable model for transparent impact</h2>
+                    <div class="model-grid">
+                        <template for:each={workingModel} for:item="item">
+                            <article class="model-card" key={item.id}>
+                                <h3>{item.title}</h3>
+                                <p>{item.description}</p>
+                            </article>
+                        </template>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section muted">
+                <div class="container">
+                    <span class="section-label">TWW Impact Cycle</span>
+                    <h2>From need to scalable model</h2>
+                    <div class="cycle-grid">
+                        <template for:each={impactCycle} for:item="step">
+                            <div class="cycle-step" key={step}>{step}</div>
+                        </template>
+                    </div>
+                    <article class="report-panel">
+                        <h3>Our Promise</h3>
+                        <p>Volunteer-powered. Partnership-driven. Zero operating cost. Sustainable impact. Scalable change.</p>
+                    </article>
+                </div>
+            </section>
+        </template>
+
+        <template if:true={isInitiatives}>
+            <section class="content-section">
+                <div class="container">
+                    <span class="section-label">Program Portfolio</span>
+                    <h2>Flagship Initiatives</h2>
+                    <div class="initiative-grid">
+                        <template for:each={initiatives} for:item="initiative">
+                            <article class="initiative-card" key={initiative.id}>
+                                <img src={initiative.image} alt={initiative.title} />
+                                <div class="initiative-body">
+                                    <span>{initiative.category}</span>
+                                    <h3>{initiative.title}</h3>
+                                    <p>{initiative.description}</p>
+                                    <strong>{initiative.metric}</strong>
+                                    <a href={initiative.href} class="initiative-link">Read More</a>
+                                </div>
+                            </article>
+                        </template>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section muted">
+                <div class="container split-grid">
+                    <article>
+                        <span class="section-label">Rural Transformation</span>
+                        <h2>Seven pillars for integrated village development</h2>
+                        <p>
+                            The rural transformation model brings together education, child welfare, healthcare, livelihoods, water, waste, and renewable energy to support self-reliant, inclusive, and thriving communities.
+                        </p>
+                        <div class="pill-grid">
+                            <template for:each={ruralPillars} for:item="pillar">
+                                <span key={pillar}>{pillar}</span>
+                            </template>
+                        </div>
+                    </article>
+                    <aside class="photo-card">
+                        <img src={ruralHospitalImage} alt="Rural transformation facility" />
+                    </aside>
+                </div>
+            </section>
+        </template>
+
+        <template if:true={isInitiativeDetail}>
+            <section class="content-section">
+                <div class="container split-grid">
+                    <article>
+                        <span class="section-label">Initiative Detail</span>
+                        <h2>{page.title}</h2>
+                        <p>{page.intro}</p>
+                    </article>
+                    <aside class="photo-card detail-image-panel">
+                        <img src={page.image} alt={page.title} />
+                    </aside>
+                </div>
+            </section>
+
+            <template for:each={initiativeSections} for:item="section">
+                <section class="content-section muted detail-band" key={section.id}>
+                    <div class="container">
+                        <article class="detail-section">
+                            <h2>{section.title}</h2>
+                            <template if:true={section.paragraphs}>
+                                <template for:each={section.paragraphs} for:item="paragraph">
+                                    <p key={paragraph}>{paragraph}</p>
+                                </template>
+                            </template>
+                            <template if:true={section.bullets}>
+                                <div class="detail-bullets">
+                                    <template for:each={section.bullets} for:item="bullet">
+                                        <div class="list-item" key={bullet}>{bullet}</div>
+                                    </template>
+                                </div>
+                            </template>
+                            <template if:true={section.quote}>
+                                <blockquote>{section.quote}</blockquote>
+                            </template>
+                        </article>
+                    </div>
+                </section>
+            </template>
+
+            <template if:true={hasRelatedLinks}>
+                <section class="content-section">
+                    <div class="container">
+                        <span class="section-label">Related Pages</span>
+                        <h2>Explore related initiative details</h2>
+                        <div class="related-grid">
+                            <template for:each={initiativeRelatedLinks} for:item="link">
+                                <article class="related-card" key={link.id}>
+                                    <h3>{link.title}</h3>
+                                    <p>{link.description}</p>
+                                    <a href={link.href} class="initiative-link">Read More</a>
+                                </article>
+                            </template>
+                        </div>
+                    </div>
+                </section>
+            </template>
+        </template>
+
+        <template if:true={isImpact}>
+            <section class="content-section">
+                <div class="container">
+                    <span class="section-label">Impact Dashboard</span>
+                    <h2>Numbers that represent real lives changed</h2>
+                    <div class="metric-grid">
+                        <template for:each={impactStats} for:item="stat">
+                            <div class="metric-card" key={stat.id}>
+                                <span>{stat.value}</span>
+                                <p>{stat.label}</p>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section muted">
+                <div class="container split-grid">
+                    <article>
+                        <span class="section-label">Stories of Change</span>
+                        <h2>From beneficiary to self-reliant supporter</h2>
+                        <p>
+                            Sumit, supported by TWW in class 12, secured 76% and wanted to excel in animation. TWW supported his on-the-job learning with AmazDraw. He is now earning, self-sufficient, and has become a donor of TWW.
+                        </p>
+                        <p>Proud to say: once a beneficiary, now a supporter. We are impacting lives, and Together We Will.</p>
+                    </article>
+                    <aside class="photo-card">
+                        <img src={impactStoryImage} alt="TWW impact success story" />
+                    </aside>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="container">
+                    <span class="section-label">Reports</span>
+                    <h2>Annual reports</h2>
+                    <div class="report-list">
+                        <template for:each={reports} for:item="report">
+                            <article class="report-row" key={report.id}>
+                                <div>
+                                    <h3>{report.label}</h3>
+                                    <p>{report.status}</p>
+                                </div>
+                                <template if:true={report.url}>
+                                    <a href={report.url} target="_blank" rel="noopener" class="btn-primary">Open</a>
+                                </template>
+                            </article>
+                        </template>
+                    </div>
+                </div>
+            </section>
+        </template>
+
+        <template if:true={isPartners}>
+            <section class="content-section">
+                <div class="container split-grid">
+                    <article>
+                        <span class="section-label">Why Partner With TWW</span>
+                        <h2>Transparent CSR and multi-sector impact</h2>
+                        <p>
+                            Partnering with TWW helps organizations create measurable impact across education, child welfare, healthcare, mental well-being, skill development, and rural transformation while supporting India's development priorities.
+                        </p>
+                        <div class="list-grid compact">
+                            <template for:each={partnerReasons} for:item="reason">
+                                <div class="list-item" key={reason}>{reason}</div>
+                            </template>
+                        </div>
+                    </article>
+                    <aside class="partner-visuals">
+                        <img src={partnersCsrImage} alt="TWW CSR partners" />
+                        <img src={partnersGovtImage} alt="TWW government and NGO partners" />
+                    </aside>
+                </div>
+            </section>
+
+            <section class="content-section muted">
+                <div class="container split-grid">
+                    <article>
+                        <span class="section-label">Our Biggest Differentiator</span>
+                        <h2>Zero Operating Cost NGO Model</h2>
+                        <p>
+                            TWW operates through a unique volunteer-driven, Zero Operating Cost NGO Model, where all administrative, management, and coordination functions are undertaken through volunteers and partner support.
+                        </p>
+                        <p>
+                            This ensures that 100% of funds and resources received are deployed directly towards beneficiary-centric programs and community impact initiatives, maximizing the value and effectiveness of every CSR contribution.
+                        </p>
+                    </article>
+                    <aside class="partner-visuals">
+                        <img src={consortiumImage} alt="TWW consortium partner responsibilities" />
+                    </aside>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="container">
+                    <span class="section-label">CSR Opportunities</span>
+                    <h2>A single partnership can support multiple domains</h2>
+                    <div class="pill-grid">
+                        <template for:each={csrAreas} for:item="area">
+                            <span key={area}>{area}</span>
+                        </template>
+                    </div>
+                </div>
+            </section>
+        </template>
+
+        <template if:true={isGetInvolved}>
+            <section class="content-section">
+                <div class="container">
+                    <span class="section-label">Make a Difference</span>
+                    <h2>Choose how you want to help</h2>
+                    <div class="help-grid">
+                        <template for:each={helpItems} for:item="help">
+                            <article class="help-card" key={help.id}>
+                                <h3>{help.title}</h3>
+                                <ul>
+                                    <template for:each={help.items} for:item="item">
+                                        <li key={item}>{item}</li>
+                                    </template>
+                                </ul>
+                            </article>
+                        </template>
+                    </div>
+                </div>
+            </section>
+        </template>
+
+        <template if:true={isNews}>
+            <section class="content-section">
+                <div class="container split-grid">
+                    <article>
+                        <span class="section-label">News and Media</span>
+                        <h2>Stay connected with updates, stories, and milestones</h2>
+                        <p>
+                            This section shares project updates, success stories, media coverage, newsletters, photographs, videos, event highlights, campaigns, partnerships, and community initiatives.
+                        </p>
+                        <p>
+                            It is a window into the lives being transformed and the collective efforts driving sustainable change.
+                        </p>
+                    </article>
+                    <aside class="social-grid">
+                        <template for:each={socialLinks} for:item="link">
+                            <article class="social-card" key={link.id}>
+                                <img src={link.image} alt={link.label} />
+                                <h3>{link.label}</h3>
+                            </article>
+                        </template>
+                    </aside>
+                </div>
+            </section>
+        </template>
+
+        <template if:true={isContact}>
+            <section class="content-section">
+                <div class="container split-grid">
+                    <article>
+                        <span class="section-label">Contact Details</span>
+                        <h2>Reach out to TWW</h2>
+                        <div class="contact-card">
+                            <h3>Munish Pandhi</h3>
+                            <p>Chairman and Managing Trustee</p>
+                            <p><strong>Mobile:</strong> +91 9899703571</p>
+                            <p><strong>Email:</strong> munish.pandhi@gmail.com / togetherwewill2021@gmail.com</p>
+                            <p><strong>WhatsApp chatbot:</strong> 9220119110</p>
+                            <p><strong>Address:</strong> 11 FF Kanishka Residency, Ashoka Enclave - 3, Sector 35, Faridabad, Haryana, India - 121003</p>
+                        </div>
+                    </article>
+                    <aside class="photo-card">
+                        <img src={ruralLibraryImage} alt="TWW community learning space" />
+                    </aside>
+                </div>
+            </section>
+
+            <section class="content-section muted">
+                <div class="container">
+                    <span class="section-label">Connect and Support</span>
+                    <h2>Additional ways to stay close to the work</h2>
+                    <div class="contact-visual-grid">
+                        <template for:each={contactImages} for:item="item">
+                            <article class="contact-visual-card" key={item.id}>
+                                <img src={item.image} alt={item.label} />
+                                <h3>{item.label}</h3>
+                            </article>
+                        </template>
+                    </div>
+                </div>
+            </section>
+        </template>
+
+        <template if:true={isDonate}>
+            <section class="content-section">
+                <div class="container split-grid">
+                    <article>
+                        <span class="section-label">Ways to Donate</span>
+                        <h2>Support education, welfare, healthcare, skills, and rural transformation</h2>
+                        <p>
+                            Every contribution received by TWW goes directly toward beneficiary programs and community impact initiatives through the zero operating cost model.
+                        </p>
+                        <div class="bank-card">
+                            <template for:each={bankDetails} for:item="row">
+                                <div key={row.id}>
+                                    <span>{row.label}</span>
+                                    <strong>{row.value}</strong>
+                                </div>
+                            </template>
+                        </div>
+                    </article>
+                    <aside class="qr-card">
+                        <img src={donationQrImage} alt="UPI donation QR code" />
+                        <h3>QR Code for UPI donation</h3>
+                    </aside>
+                </div>
+            </section>
+        </template>
+
+        <template if:true={isLegal}>
+            <section class="content-section">
+                <div class="container split-grid">
+                    <article>
+                        <span class="section-label">Legal and Compliance</span>
+                        <h2>Policies that support trust and accountability</h2>
+                        <p>
+                            The site identifies key policy areas for donor trust, beneficiary safety, and transparent operations. Full policy documents can be added as downloadable files as they are finalized.
+                        </p>
+                    </article>
+                    <aside class="legal-list">
+                        <template for:each={legalItems} for:item="item">
+                            <div class="list-item" key={item}>{item}</div>
+                        </template>
+                    </aside>
+                </div>
+            </section>
+        </template>
+
+        <template if:true={showFuturePlans}>
+            <section class="content-section muted">
+                <div class="container">
+                    <span class="section-label">Future Plans</span>
+                    <h2>Our roadmap ahead</h2>
+                    <div class="future-grid">
+                        <template for:each={futurePlans} for:item="plan">
+                            <article class="future-card" key={plan}>
+                                <h3>{plan}</h3>
+                            </article>
+                        </template>
+                    </div>
+                </div>
+            </section>
+        </template>
+    </main>
+
+    <footer class="footer-section">
+        <div class="container footer-grid">
+            <div class="footer-col-main">
+                <h4>Together We Will Foundation</h4>
+                <p>Volunteer-driven, partnership-led, and committed to a zero operating cost model for maximum beneficiary impact.</p>
+            </div>
+            <div>
+                <h5>Quick Links</h5>
+                <template for:each={footerPrimaryLinks} for:item="link">
+                    <a key={link.id} href={link.href}>{link.label}</a>
+                </template>
+            </div>
+            <div>
+                <h5>Get Involved</h5>
+                <template for:each={footerActionLinks} for:item="link">
+                    <a key={link.id} href={link.href}>{link.label}</a>
+                </template>
+            </div>
+            <div>
+                <h5>Contact</h5>
+                <p>Munish Pandhi</p>
+                <p>+91 9899703571</p>
+                <p>togetherwewill2021@gmail.com</p>
+                <p>WhatsApp chatbot: 9220119110</p>
+            </div>
+        </div>
+    </footer>
+</template>

@@ -1,0 +1,82 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Kanya Ashram Jhajjar, Haryana",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {},
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\": \"b70855b5-551e-4114-9300-e44ad23ac552\", \"columns\": [{\"UUID\": \"73eee29f-b77a-4a39-8828-934eb9bb49e3\", \"columnName\": \"Column 1\", \"columnKey\": \"col1\", \"columnWidth\": \"12\", \"seedComponents\": []}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "dxpStyle": {}
+                      },
+                      "definition": "c:twwContentPages",
+                      "id": "b59ce0b7-c148-4cbc-81f9-674709ebef0d",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "73eee29f-b77a-4a39-8828-934eb9bb49e3",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "b70855b5-551e-4114-9300-e44ad23ac552",
+              "type": "component"
+            }
+          ],
+          "id": "2f97f8ef-1cce-4f84-b8fb-34ba731f3f03",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "dxpStyle": {},
+                "pageTitle": "Kanya Ashram Jhajjar, Haryana",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "419cf961-fa0e-4757-937d-66df30ebd518",
+              "type": "component"
+            }
+          ],
+          "id": "f7b74f21-90cc-4ff6-b748-c5781a361f50",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "813a1a82-ce41-4471-afda-ba8855285ea2",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "custom-initiative-kanya-ashram-jhajjar-haryana"
+  },
+  "urlName": "initiative-kanya-ashram-jhajjar-haryana"
+}

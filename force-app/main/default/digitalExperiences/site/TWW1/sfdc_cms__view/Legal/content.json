@@ -1,0 +1,82 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Legal and Compliance",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {},
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\":\"9a52b58a-5b58-515f-b6da-b7fc78302172\",\"columns\":[{\"UUID\":\"5e003507-18af-5c55-ba18-4c35e214d973\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "dxpStyle": {}
+                      },
+                      "definition": "c:twwContentPages",
+                      "id": "3d9383b3-6c44-5b47-abf0-be2b43887e88",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "5e003507-18af-5c55-ba18-4c35e214d973",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "9a52b58a-5b58-515f-b6da-b7fc78302172",
+              "type": "component"
+            }
+          ],
+          "id": "07bc606e-f8f8-54e5-9a92-46f482b91d81",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "dxpStyle": {},
+                "pageTitle": "Legal and Compliance",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "58130808-fbd2-5aa2-9ec7-5bdb87f64c79",
+              "type": "component"
+            }
+          ],
+          "id": "59975ae5-d0dc-53a4-afff-09053da971d0",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "995b1237-e894-5cc2-983f-0c90dcd6e3fb",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "custom-legal"
+  },
+  "urlName": "legal"
+}

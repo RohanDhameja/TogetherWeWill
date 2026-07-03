@@ -1,0 +1,82 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Support for Tribal Communities",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {},
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\": \"2af5d0f3-c8f7-4d39-8fce-e7f339add947\", \"columns\": [{\"UUID\": \"c9e54d31-334f-4861-932c-6c20ece2b989\", \"columnName\": \"Column 1\", \"columnKey\": \"col1\", \"columnWidth\": \"12\", \"seedComponents\": []}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "dxpStyle": {}
+                      },
+                      "definition": "c:twwContentPages",
+                      "id": "40ced20f-9b10-4ec1-9d86-6f6da5789213",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "c9e54d31-334f-4861-932c-6c20ece2b989",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "2af5d0f3-c8f7-4d39-8fce-e7f339add947",
+              "type": "component"
+            }
+          ],
+          "id": "1a4e790f-7c6b-4390-8f91-8a32a4e8fc90",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "dxpStyle": {},
+                "pageTitle": "Support for Tribal Communities",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "dc3b42fa-eafb-466d-8d4c-af41f2654bc5",
+              "type": "component"
+            }
+          ],
+          "id": "09cbbac0-9f0d-4946-b1b4-5918a126fa38",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "3759111f-8952-432c-996d-86a5acf80458",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "custom-initiative-support-for-tribal-communities"
+  },
+  "urlName": "initiative-support-for-tribal-communities"
+}

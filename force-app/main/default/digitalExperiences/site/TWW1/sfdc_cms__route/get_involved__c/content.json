@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "Get Involved",
+  "contentBody": {
+    "activeViewId": "GetInvolved",
+    "configurationTags": [],
+    "pageAccess": "Public",
+    "routeType": "custom-get-involved",
+    "urlPrefix": "get-involved"
+  },
+  "urlName": "get-involved"
+}

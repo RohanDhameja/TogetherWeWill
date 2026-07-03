@@ -1,0 +1,82 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Children Homes Faridabad and Gurugram",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {},
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\": \"534d177e-ad08-4d1d-b30a-6c87aa7656bc\", \"columns\": [{\"UUID\": \"b2591bea-f8ba-4d56-8545-aefa79d6dffe\", \"columnName\": \"Column 1\", \"columnKey\": \"col1\", \"columnWidth\": \"12\", \"seedComponents\": []}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "dxpStyle": {}
+                      },
+                      "definition": "c:twwContentPages",
+                      "id": "de965c3d-a40e-4755-80ba-c853460be4fb",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "b2591bea-f8ba-4d56-8545-aefa79d6dffe",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "534d177e-ad08-4d1d-b30a-6c87aa7656bc",
+              "type": "component"
+            }
+          ],
+          "id": "baa73ce3-9c28-4225-8eea-711d8551735b",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "dxpStyle": {},
+                "pageTitle": "Children Homes Faridabad and Gurugram",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "755c3860-954f-4630-b76f-c0dfbf30a8b7",
+              "type": "component"
+            }
+          ],
+          "id": "3e304cb4-fffa-4181-ac65-f737b8fb81d8",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "c5330d00-cfb6-44e6-a0c4-c0ff0a86c8c1",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "custom-initiative-children-homes-faridabad-gurugram"
+  },
+  "urlName": "initiative-children-homes-faridabad-gurugram"
+}

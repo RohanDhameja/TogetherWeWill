@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "Our Working Model",
+  "contentBody": {
+    "activeViewId": "WorkingModel",
+    "configurationTags": [],
+    "pageAccess": "Public",
+    "routeType": "custom-working-model",
+    "urlPrefix": "working-model"
+  },
+  "urlName": "working-model"
+}

@@ -1,0 +1,82 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Impact",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {},
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\":\"3625f7fe-44f1-5b4a-878b-a9ec481e87fd\",\"columns\":[{\"UUID\":\"90ea0b70-df53-525c-9ba6-b42107855685\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "dxpStyle": {}
+                      },
+                      "definition": "c:twwContentPages",
+                      "id": "eddacac2-20c1-578c-bede-7b0b782b9ace",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "90ea0b70-df53-525c-9ba6-b42107855685",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "3625f7fe-44f1-5b4a-878b-a9ec481e87fd",
+              "type": "component"
+            }
+          ],
+          "id": "b8396305-a379-59f0-be76-dedc62eba2f2",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "dxpStyle": {},
+                "pageTitle": "Impact",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "288397a5-f597-54da-8159-94465e90512d",
+              "type": "component"
+            }
+          ],
+          "id": "ccb7deb8-4156-5860-b84b-f7c7a81116f0",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "d51e46bc-ca78-5db3-977f-2d25961137a9",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "custom-impact"
+  },
+  "urlName": "impact"
+}

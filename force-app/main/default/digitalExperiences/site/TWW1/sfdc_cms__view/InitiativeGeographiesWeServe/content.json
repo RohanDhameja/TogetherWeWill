@@ -1,0 +1,82 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Geographies We Serve",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {},
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\": \"c507fa9f-2d58-4ab6-bec2-da5bd9ebf543\", \"columns\": [{\"UUID\": \"5c75b191-6121-4e51-9dbc-5e6bb966e560\", \"columnName\": \"Column 1\", \"columnKey\": \"col1\", \"columnWidth\": \"12\", \"seedComponents\": []}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "dxpStyle": {}
+                      },
+                      "definition": "c:twwContentPages",
+                      "id": "4cd3104c-26de-4494-87df-0b4a4c90536f",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "5c75b191-6121-4e51-9dbc-5e6bb966e560",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "c507fa9f-2d58-4ab6-bec2-da5bd9ebf543",
+              "type": "component"
+            }
+          ],
+          "id": "8ffc87f3-1086-4680-b38f-4a3b2efb7d25",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "dxpStyle": {},
+                "pageTitle": "Geographies We Serve",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "0565d955-1a8c-4133-81d0-2746d88f0ccc",
+              "type": "component"
+            }
+          ],
+          "id": "84f009c1-dbec-4929-9f36-a599083166e1",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "d17fed84-5f4e-481e-a37d-440768ae01db",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "custom-initiative-geographies-we-serve"
+  },
+  "urlName": "initiative-geographies-we-serve"
+}

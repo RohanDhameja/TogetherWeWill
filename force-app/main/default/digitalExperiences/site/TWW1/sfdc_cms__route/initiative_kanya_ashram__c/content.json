@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "Kanya Ashram Jhajjar, Haryana",
+  "contentBody": {
+    "activeViewId": "InitiativeKanyaAshram",
+    "configurationTags": [],
+    "pageAccess": "Public",
+    "routeType": "custom-initiative-kanya-ashram-jhajjar-haryana",
+    "urlPrefix": "initiatives/kanya-ashram-jhajjar-haryana"
+  },
+  "urlName": "initiative-kanya-ashram-jhajjar-haryana"
+}

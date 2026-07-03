@@ -1,0 +1,82 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Our Team",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {},
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\": \"7cd7cdc0-5f59-41a6-8f53-d9c64b7a6ac6\", \"columns\": [{\"UUID\": \"f148211e-928b-41bd-9721-2efe36091d48\", \"columnName\": \"Column 1\", \"columnKey\": \"col1\", \"columnWidth\": \"12\", \"seedComponents\": []}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "dxpStyle": {}
+                      },
+                      "definition": "c:twwContentPages",
+                      "id": "9f29382e-363a-4225-8add-efec50e047c7",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "f148211e-928b-41bd-9721-2efe36091d48",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "7cd7cdc0-5f59-41a6-8f53-d9c64b7a6ac6",
+              "type": "component"
+            }
+          ],
+          "id": "05108b34-d2b9-4545-8051-ca4cf6c9ed5a",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "dxpStyle": {},
+                "pageTitle": "Our Team",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "65b20c3e-1a16-4bda-83cd-d1b33f286f83",
+              "type": "component"
+            }
+          ],
+          "id": "33acf8cd-302b-4f16-9315-99db8059aeae",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "a60486e6-67a1-45ba-adf2-e64a83719258",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "custom-initiative-our-team"
+  },
+  "urlName": "initiative-our-team"
+}

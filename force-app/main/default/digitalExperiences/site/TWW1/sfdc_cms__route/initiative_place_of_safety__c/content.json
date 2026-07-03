@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "Place of Safety",
+  "contentBody": {
+    "activeViewId": "InitiativePlaceOfSafety",
+    "configurationTags": [],
+    "pageAccess": "Public",
+    "routeType": "custom-initiative-place-of-safety",
+    "urlPrefix": "initiatives/place-of-safety"
+  },
+  "urlName": "initiative-place-of-safety"
+}

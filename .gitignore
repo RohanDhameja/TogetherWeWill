@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+
+# Salesforce local state and auth
+.sf/
+.sfdx/
+
+# Node and tooling output
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local environment files
+.env
+.env.*
+
+# Local generated backups
+backups/
+
+# Test and coverage output
+coverage/
+.nyc_output/

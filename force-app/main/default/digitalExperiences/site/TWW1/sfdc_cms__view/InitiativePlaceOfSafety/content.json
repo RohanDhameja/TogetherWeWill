@@ -1,0 +1,82 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Place of Safety",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {},
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\": \"4ff7aaf0-1db3-4118-b913-3430ab97c95d\", \"columns\": [{\"UUID\": \"7a2bc808-f060-48c2-965e-d9944a0ab0af\", \"columnName\": \"Column 1\", \"columnKey\": \"col1\", \"columnWidth\": \"12\", \"seedComponents\": []}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "dxpStyle": {}
+                      },
+                      "definition": "c:twwContentPages",
+                      "id": "c3e7e2c7-2967-43ba-a7f2-5e16da237987",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "7a2bc808-f060-48c2-965e-d9944a0ab0af",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "4ff7aaf0-1db3-4118-b913-3430ab97c95d",
+              "type": "component"
+            }
+          ],
+          "id": "fc2dd858-e55a-4044-8f65-367b1da6af7c",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "dxpStyle": {},
+                "pageTitle": "Place of Safety",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "af85658f-1cef-4b41-85b9-2034aae61976",
+              "type": "component"
+            }
+          ],
+          "id": "f0dce451-b34e-49de-b469-a30777d35240",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "fe7366c3-dba6-4da9-873b-3d793da219a3",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "custom-initiative-place-of-safety"
+  },
+  "urlName": "initiative-place-of-safety"
+}

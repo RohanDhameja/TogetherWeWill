@@ -1,0 +1,205 @@
+<!--
+@File Name : volunteerWebToCaseForm.html
+@Description : HTML template for Volunteer Web-to-Case Form component
+@Author : Accenture
+@Last Modified By :
+@Last Modified On :
+@Modification Log :
+-->
+<template>
+    <div if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_large" aria-modal="true">
+            <div class="slds-modal__container">
+                <!-- Modal Header -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" 
+                            title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-modal__title slds-hyphenate">Join as Volunteer</h2>
+                    <p class="slds-m-top_x-small">Join us in making a difference. Fill out the form below to register as a volunteer.</p>
+                </header>
+                
+                <!-- Modal Body -->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content">
+                    <template if:true={errorMessage}>
+                        <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+                            <span class="slds-assistive-text">error</span>
+                            <h2>{errorMessage}</h2>
+                        </div>
+                    </template>
+                    
+                    <form>
+                        <!-- Personal Information Section -->
+                        <div class="slds-section slds-is-open">
+                            <h3 class="slds-section__title slds-theme_shade">
+                                <span class="slds-truncate slds-p-horizontal_small">Personal Information</span>
+                            </h3>
+                            <div class="slds-section__content">
+                                <div class="slds-grid slds-gutters slds-wrap">
+                                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                        <lightning-input
+                                            name="firstName"
+                                            label="First Name"
+                                            value={firstName}
+                                            onchange={handleInputChange}
+                                            required>
+                                        </lightning-input>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                        <lightning-input
+                                            name="lastName"
+                                            label="Last Name"
+                                            value={lastName}
+                                            onchange={handleInputChange}
+                                            required>
+                                        </lightning-input>
+                                    </div>
+                                </div>
+                                <div class="slds-grid slds-gutters slds-wrap slds-m-top_small">
+                                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                        <lightning-input
+                                            name="email"
+                                            label="Email"
+                                            type="email"
+                                            value={email}
+                                            onchange={handleInputChange}
+                                            required>
+                                        </lightning-input>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                        <lightning-input
+                                            name="mobileNumber"
+                                            label="Mobile Number"
+                                            type="tel"
+                                            pattern="[0-9]{10}"
+                                            value={mobileNumber}
+                                            onchange={handleInputChange}
+                                            required>
+                                        </lightning-input>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Professional Information Section -->
+                        <div class="slds-section slds-is-open slds-m-top_medium">
+                            <h3 class="slds-section__title slds-theme_shade">
+                                <span class="slds-truncate slds-p-horizontal_small">Professional Details</span>
+                            </h3>
+                            <div class="slds-section__content">
+                                <div class="slds-grid slds-gutters slds-wrap">
+                                    <div class="slds-col slds-size_1-of-1">
+                                        <lightning-input
+                                            name="industry"
+                                            label="Industry / Profession"
+                                            value={industry}
+                                            onchange={handleInputChange}>
+                                        </lightning-input>
+                                    </div>
+                                </div>
+                                <div class="slds-grid slds-gutters slds-wrap slds-m-top_small">
+                                    <div class="slds-col slds-size_1-of-1">
+                                        <lightning-dual-listbox
+                                            name="skills"
+                                            label="Skills / Areas of Interest"
+                                            source-label="Available Skills"
+                                            selected-label="Your Skills"
+                                            options={skillsOptions}
+                                            value={skills}
+                                            onchange={handleInputChange}>
+                                        </lightning-dual-listbox>
+                                    </div>
+                                </div>
+                                <div class="slds-grid slds-gutters slds-wrap slds-m-top_small">
+                                    <div class="slds-col slds-size_1-of-1">
+                                        <lightning-combobox
+                                            name="availability"
+                                            label="Availability"
+                                            value={availability}
+                                            placeholder="Select your availability"
+                                            options={availabilityOptions}
+                                            onchange={handleInputChange}>
+                                        </lightning-combobox>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Address Section -->
+                        <div class="slds-section slds-is-open slds-m-top_medium">
+                            <h3 class="slds-section__title slds-theme_shade">
+                                <span class="slds-truncate slds-p-horizontal_small">Address Information</span>
+                            </h3>
+                            <div class="slds-section__content">
+                                <div class="slds-grid slds-gutters slds-wrap">
+                                    <div class="slds-col slds-size_1-of-1">
+                                        <lightning-input
+                                            name="street"
+                                            label="Street Address"
+                                            value={street}
+                                            onchange={handleInputChange}>
+                                        </lightning-input>
+                                    </div>
+                                </div>
+                                <div class="slds-grid slds-gutters slds-wrap slds-m-top_small">
+                                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                        <lightning-input
+                                            name="city"
+                                            label="City"
+                                            value={city}
+                                            onchange={handleInputChange}>
+                                        </lightning-input>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                        <lightning-combobox
+                                            name="state"
+                                            label="State"
+                                            value={state}
+                                            placeholder="Select a state"
+                                            options={stateOptions}
+                                            onchange={handleInputChange}>
+                                        </lightning-combobox>
+                                    </div>
+                                </div>
+                                <div class="slds-grid slds-gutters slds-wrap slds-m-top_small">
+                                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                        <lightning-input
+                                            name="postalCode"
+                                            label="Postal Code"
+                                            value={postalCode}
+                                            onchange={handleInputChange}>
+                                        </lightning-input>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                        <lightning-input
+                                            name="country"
+                                            label="Country"
+                                            value={country}
+                                            onchange={handleInputChange}>
+                                        </lightning-input>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Modal Footer -->
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={closeModal}>Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick={handleSubmit} disabled={isSubmitting}>
+                        <template if:false={isSubmitting}>
+                            Submit Registration
+                        </template>
+                        <template if:true={isSubmitting}>
+                            Submitting...
+                        </template>
+                    </button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+</template>

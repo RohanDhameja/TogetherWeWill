@@ -1,0 +1,82 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "7 Pillars of Rural Transformation",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {},
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\": \"f65bd752-aca6-4383-8428-a9ba5c38f84d\", \"columns\": [{\"UUID\": \"441c8225-d718-4d28-bdc1-91d0edb0a8f8\", \"columnName\": \"Column 1\", \"columnKey\": \"col1\", \"columnWidth\": \"12\", \"seedComponents\": []}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "dxpStyle": {}
+                      },
+                      "definition": "c:twwContentPages",
+                      "id": "3ce9c94b-6d42-4f0b-b028-15bea928157e",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "441c8225-d718-4d28-bdc1-91d0edb0a8f8",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "f65bd752-aca6-4383-8428-a9ba5c38f84d",
+              "type": "component"
+            }
+          ],
+          "id": "1c3bc6b3-57ed-4a06-90ba-991b581cc77c",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "dxpStyle": {},
+                "pageTitle": "7 Pillars of Rural Transformation",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "f200f0fa-ca3a-42aa-af8c-0545079b825c",
+              "type": "component"
+            }
+          ],
+          "id": "400805db-1985-4aec-a842-59aa362935bc",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "1cae99b0-cba4-4d5d-99aa-bb785543d181",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "custom-initiative-rural-transformation-pillars"
+  },
+  "urlName": "initiative-rural-transformation-pillars"
+}

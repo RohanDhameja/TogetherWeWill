@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "Rural Transformation",
+  "contentBody": {
+    "activeViewId": "InitiativeRuralTransformation",
+    "configurationTags": [],
+    "pageAccess": "Public",
+    "routeType": "custom-initiative-rural-transformation",
+    "urlPrefix": "initiatives/rural-transformation"
+  },
+  "urlName": "initiative-rural-transformation"
+}

@@ -1,0 +1,163 @@
+<template>
+    <header class="navbar">
+        <div class="nav-container">
+            <a class="nav-logo" href="/togetherwewill/">
+                <img src={foundationLogo} alt="TWW Logo" class="logo-img" />
+                <span class="logo-text">Together We Will</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="/togetherwewill/" class="nav-link nav-link-active">Home</a>
+                <a href="/togetherwewill/about" class="nav-link">About</a>
+                <a href="/togetherwewill/working-model" class="nav-link">Model</a>
+                <a href="/togetherwewill/initiatives" class="nav-link">Initiatives</a>
+                <a href="/togetherwewill/impact" class="nav-link">Impact</a>
+                <a href="/togetherwewill/partners" class="nav-link">Partners</a>
+                <a href="/togetherwewill/contact" class="nav-link">Contact</a>
+            </nav>
+            <button class="btn-nav-donate" onclick={handleDonate}>Donate</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section" style={heroSectionStyle}>
+            <div class="hero-content">
+                <span class="hero-badge">Volunteer-driven. Zero operating cost.</span>
+                <h1 class="hero-title">Transforming Lives Through Child Welfare, Education, and Upskilling</h1>
+                <p class="hero-subtitle">
+                    Together We Will Foundation creates sustainable impact across 14 states and 3 countries through volunteer action, trusted partnerships, and community-led programs.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick={handleDonate}>Donate Now</button>
+                    <button class="btn-secondary" onclick={handleVolunteer}>Get Involved</button>
+                </div>
+                <div class="hero-stats">
+                    <template for:each={impactStats} for:item="stat">
+                        <div class="hero-stat" key={stat.id}>
+                            <span>{stat.value}</span>
+                            <small>{stat.label}</small>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container split-grid">
+                <article>
+                    <span class="section-label">Who We Are</span>
+                    <h2>Creating opportunities. Transforming lives.</h2>
+                    <p>
+                        Together We Will Foundation is a community of common people bound by trust, working to help vulnerable children, families, women, and communities in whatever way we can.
+                    </p>
+                    <p>
+                        We bridge opportunity gaps through education, child welfare, healthcare, mental well-being, skill development, and rural transformation.
+                    </p>
+                    <div class="value-row">
+                        <span>Compassion</span>
+                        <span>Integrity</span>
+                        <span>Inclusion</span>
+                        <span>Collaboration</span>
+                        <span>Empowerment</span>
+                        <span>Sustainability</span>
+                    </div>
+                </article>
+                <aside class="photo-panel">
+                    <img src={aboutImage} alt="Together We Will community activity" />
+                </aside>
+            </div>
+        </section>
+
+        <section class="section muted">
+            <div class="container">
+                <span class="section-label">Our Impact Areas</span>
+                <h2>Focused support where children and communities need it most</h2>
+                <div class="focus-grid">
+                    <template for:each={focusAreas} for:item="area">
+                        <article class="focus-card" key={area.id}>
+                            <img src={area.image} alt={area.title} />
+                            <div class="card-body">
+                                <h3>{area.title}</h3>
+                                <p>{area.description}</p>
+                                <a href="/togetherwewill/initiatives">Explore Initiatives</a>
+                            </div>
+                        </article>
+                    </template>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container split-grid">
+                <article class="story-copy">
+                    <span class="section-label">Stories of Change</span>
+                    <h2>Impact becomes real through people</h2>
+                    <p>
+                        The revised site includes stories of change, impact reporting, and a clear path for volunteers, CSR partners, and donors to take action.
+                    </p>
+                    <a class="btn-primary" href="/togetherwewill/impact">View Impact</a>
+                </article>
+                <aside class="photo-panel">
+                    <img src={impactStoryImage} alt="TWW success story visual" />
+                </aside>
+            </div>
+        </section>
+
+        <section class="section muted">
+            <div class="container">
+                <span class="section-label">Future Plans</span>
+                <h2>Our roadmap ahead</h2>
+                <div class="future-grid">
+                    <template for:each={futurePlans} for:item="plan">
+                        <div class="future-item" key={plan}>{plan}</div>
+                    </template>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container cta-content">
+                <h2>Together, we will transform lives.</h2>
+                <p>
+                    Every contribution, big or small, creates ripples of change through education, child welfare, healthcare, mental well-being, skill development, and rural transformation.
+                </p>
+                <div class="cta-buttons">
+                    <button class="btn-cta-primary" onclick={handleDonate}>Donate Now</button>
+                    <button class="btn-cta-secondary" onclick={handleVolunteer}>Volunteer With Us</button>
+                    <button class="btn-cta-secondary" onclick={handleShare}>Share</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-section">
+        <div class="container footer-grid">
+            <div>
+                <h4>Together We Will Foundation</h4>
+                <p>A volunteer-driven, zero-operating-cost NGO creating sustainable impact through trust, transparency, and collective action.</p>
+            </div>
+            <div>
+                <h5>Quick Links</h5>
+                <a href="/togetherwewill/about">About Us</a>
+                <a href="/togetherwewill/working-model">Working Model</a>
+                <a href="/togetherwewill/initiatives">Flagship Initiatives</a>
+                <a href="/togetherwewill/impact">Impact</a>
+                <a href="/togetherwewill/partners">Partners</a>
+            </div>
+            <div>
+                <h5>Get Involved</h5>
+                <a href="/togetherwewill/get-involved">Volunteer</a>
+                <a href="/togetherwewill/donate">Donate</a>
+                <a href="/togetherwewill/news-media">News and Media</a>
+                <a href="/togetherwewill/legal">Legal and Compliance</a>
+            </div>
+            <div>
+                <h5>Contact Us</h5>
+                <p>Chairman and Managing Trustee: Munish Pandhi</p>
+                <p>+91 9899703571</p>
+                <p>togetherwewill2021@gmail.com</p>
+                <p>WhatsApp chatbot: 9220119110</p>
+                <p>11 FF Kanishka Residency, Ashoka Enclave - 3, Sector 35, Faridabad, Haryana, India - 121003</p>
+            </div>
+        </div>
+    </footer>
+</template>

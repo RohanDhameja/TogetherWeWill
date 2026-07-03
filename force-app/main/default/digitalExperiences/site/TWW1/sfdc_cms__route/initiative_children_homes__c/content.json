@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "Children Homes Faridabad and Gurugram",
+  "contentBody": {
+    "activeViewId": "InitiativeChildrenHomes",
+    "configurationTags": [],
+    "pageAccess": "Public",
+    "routeType": "custom-initiative-children-homes-faridabad-gurugram",
+    "urlPrefix": "initiatives/children-homes-faridabad-gurugram"
+  },
+  "urlName": "initiative-children-homes-faridabad-gurugram"
+}

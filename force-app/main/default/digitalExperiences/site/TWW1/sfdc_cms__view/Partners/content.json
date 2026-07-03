@@ -1,0 +1,82 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Partners",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {},
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\":\"ff0e966e-697d-5970-804a-437c31b096c2\",\"columns\":[{\"UUID\":\"d040f817-16ac-5ce0-84a9-3cc3bfc6dac8\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "dxpStyle": {}
+                      },
+                      "definition": "c:twwContentPages",
+                      "id": "317a404e-858d-5e46-b226-9ec69ab68153",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "d040f817-16ac-5ce0-84a9-3cc3bfc6dac8",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "ff0e966e-697d-5970-804a-437c31b096c2",
+              "type": "component"
+            }
+          ],
+          "id": "bec39600-c46e-59af-8bd7-b08cecae321c",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "dxpStyle": {},
+                "pageTitle": "Partners",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "c8a08dba-d893-58cc-a593-dda771a35fdf",
+              "type": "component"
+            }
+          ],
+          "id": "d9728016-22d9-50c4-9a62-d9bb648fb68e",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "dd9c474f-6f14-5f0e-80f0-5069ebd2d738",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "custom-partners"
+  },
+  "urlName": "partners"
+}

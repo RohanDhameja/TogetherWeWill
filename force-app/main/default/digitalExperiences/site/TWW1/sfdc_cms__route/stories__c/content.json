@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "Stories",
+  "contentBody": {
+    "activeViewId": "Stories",
+    "configurationTags": [],
+    "pageAccess": "Public",
+    "routeType": "custom-stories",
+    "urlPrefix": "stories"
+  },
+  "urlName": "stories"
+}

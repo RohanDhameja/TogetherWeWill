@@ -1,0 +1,82 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Skill Development and Empowerment",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {},
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\": \"b3f06c97-fa2d-4c47-9f35-46631580c0f9\", \"columns\": [{\"UUID\": \"05bcca0a-09c3-461f-aa30-b391ccda4c47\", \"columnName\": \"Column 1\", \"columnKey\": \"col1\", \"columnWidth\": \"12\", \"seedComponents\": []}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "dxpStyle": {}
+                      },
+                      "definition": "c:twwContentPages",
+                      "id": "72134b7c-e9cf-422f-912d-9083026f0241",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "05bcca0a-09c3-461f-aa30-b391ccda4c47",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "b3f06c97-fa2d-4c47-9f35-46631580c0f9",
+              "type": "component"
+            }
+          ],
+          "id": "15316e2b-26b4-410a-a2cd-60bd00c8a138",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "dxpStyle": {},
+                "pageTitle": "Skill Development and Empowerment",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "d6f757be-4247-400d-b844-b326c3c47827",
+              "type": "component"
+            }
+          ],
+          "id": "aa899e05-1717-4d59-8321-2a36bcd5c699",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "3b50c8c2-3ae7-4877-9430-32302cc9f005",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "custom-initiative-skill-development-empowerment"
+  },
+  "urlName": "initiative-skill-development-empowerment"
+}

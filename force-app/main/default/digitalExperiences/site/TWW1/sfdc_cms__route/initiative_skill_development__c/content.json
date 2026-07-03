@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "Skill Development and Empowerment",
+  "contentBody": {
+    "activeViewId": "InitiativeSkillDevelopment",
+    "configurationTags": [],
+    "pageAccess": "Public",
+    "routeType": "custom-initiative-skill-development-empowerment",
+    "urlPrefix": "initiatives/skill-development-empowerment"
+  },
+  "urlName": "initiative-skill-development-empowerment"
+}

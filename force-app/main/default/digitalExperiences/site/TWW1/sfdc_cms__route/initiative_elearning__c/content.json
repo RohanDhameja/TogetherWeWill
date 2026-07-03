@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "eLearning Initiatives",
+  "contentBody": {
+    "activeViewId": "InitiativeELearning",
+    "configurationTags": [],
+    "pageAccess": "Public",
+    "routeType": "custom-initiative-elearning-initiatives",
+    "urlPrefix": "initiatives/elearning-initiatives"
+  },
+  "urlName": "initiative-elearning-initiatives"
+}

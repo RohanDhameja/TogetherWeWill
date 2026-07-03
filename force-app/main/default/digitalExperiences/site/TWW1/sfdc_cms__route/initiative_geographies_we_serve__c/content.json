@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "Geographies We Serve",
+  "contentBody": {
+    "activeViewId": "InitiativeGeographiesWeServe",
+    "configurationTags": [],
+    "pageAccess": "Public",
+    "routeType": "custom-initiative-geographies-we-serve",
+    "urlPrefix": "initiatives/geographies-we-serve"
+  },
+  "urlName": "initiative-geographies-we-serve"
+}

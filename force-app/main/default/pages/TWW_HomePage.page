@@ -1,0 +1,158 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" docType="html-5.0">
+    <head>
+        <apex:stylesheet value="{!URLFOR($Resource.TWW_Portal_Branding)}" />
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: 'Salesforce Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <!-- Hero Banner Section -->
+        <div class="hero-banner fade-in">
+            <div class="hero-content">
+                <h1>Together We Will Make a Difference</h1>
+                <p class="hero-subtitle">
+                    Empowering communities across India through education, healthcare, 
+                    and sustainable development initiatives.
+                </p>
+                <div class="cta-container" style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <button class="cta-button" onclick="window.location.href='/together-we-will/s/donate'">
+                        Donate Now
+                    </button>
+                    <button class="cta-button-secondary" onclick="openVolunteerModal()">
+                        Become a Volunteer
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Impact Statistics Section -->
+        <section class="section">
+            <div class="section-container">
+                <h2 class="section-title">Our Impact</h2>
+                <p class="section-subtitle">
+                    Together, we have transformed thousands of lives across India
+                </p>
+                
+                <div class="stats-container">
+                    <div class="stat-box fade-in">
+                        <div class="stat-number">50,000+</div>
+                        <div class="stat-label">Lives Impacted</div>
+                    </div>
+                    
+                    <div class="stat-box fade-in">
+                        <div class="stat-number">5,000+</div>
+                        <div class="stat-label">Active Volunteers</div>
+                    </div>
+                    
+                    <div class="stat-box fade-in">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    
+                    <div class="stat-box fade-in">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">States Covered</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Programs Section -->
+        <section class="section" style="background: white;">
+            <div class="section-container">
+                <h2 class="section-title">Our Programs</h2>
+                <p class="section-subtitle">
+                    Discover how we're making a difference in communities
+                </p>
+                
+                <div class="grid-container">
+                    <!-- Education Program Card -->
+                    <div class="content-card">
+                        <div class="card-icon">
+                            <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+                                <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+                                <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Education for All</h3>
+                        <p>
+                            Providing quality education and learning resources to underprivileged 
+                            children across rural India. We believe every child deserves the 
+                            opportunity to learn and grow.
+                        </p>
+                        <a href="/together-we-will/s/programs#education" class="btn-link">Learn More →</a>
+                    </div>
+                    
+                    <!-- Healthcare Program Card -->
+                    <div class="content-card">
+                        <div class="card-icon">
+                            <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Healthcare Access</h3>
+                        <p>
+                            Delivering essential healthcare services and organizing medical camps 
+                            in remote areas. Health is a fundamental right, and we're committed 
+                            to making it accessible.
+                        </p>
+                        <a href="/together-we-will/s/programs#healthcare" class="btn-link">Learn More →</a>
+                    </div>
+                    
+                    <!-- Women Empowerment Card -->
+                    <div class="content-card">
+                        <div class="card-icon">
+                            <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+                                <path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title">Women Empowerment</h3>
+                        <p>
+                            Empowering women through skill development, entrepreneurship training, 
+                            and creating sustainable livelihood opportunities for economic independence.
+                        </p>
+                        <a href="/together-we-will/s/programs#women" class="btn-link">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="section" style="background: linear-gradient(135deg, #016402 0%, #0a8f08 100%); color: white;">
+            <div class="section-container" style="text-align: center;">
+                <h2 class="section-title" style="color: white;">Join Our Mission</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.95); font-size: 1.25rem;">
+                    Your support can change lives. Whether through volunteering, donations, 
+                    or spreading awareness, every contribution matters.
+                </p>
+                <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <button class="cta-button" style="background: white; color: #016402;" 
+                            onclick="openVolunteerModal()">
+                        Volunteer Now
+                    </button>
+                    <button class="cta-button-secondary" style="border-color: white; color: white;"
+                            onclick="window.location.href='/together-we-will/s/donate'">
+                        Make a Donation
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <script>
+        function openVolunteerModal() {
+            const volunteerForm = document.querySelector('c-volunteer-registration-form');
+            if (volunteerForm) {
+                volunteerForm.openModal();
+            } else {
+                // Fallback: redirect to volunteer page
+                window.location.href = '/together-we-will/s/volunteer';
+            }
+        }
+        </script>
+    </body>
+</apex:page>

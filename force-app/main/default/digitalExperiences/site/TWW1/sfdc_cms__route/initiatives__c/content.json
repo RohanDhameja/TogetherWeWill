@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "Flagship Initiatives",
+  "contentBody": {
+    "activeViewId": "Initiatives",
+    "configurationTags": [],
+    "pageAccess": "Public",
+    "routeType": "custom-initiatives",
+    "urlPrefix": "initiatives"
+  },
+  "urlName": "initiatives"
+}

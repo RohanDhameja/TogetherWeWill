@@ -1,0 +1,82 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "eLearning Initiatives",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {},
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\": \"b88460ea-2b5b-49ea-a650-6676506ecc83\", \"columns\": [{\"UUID\": \"c709bb81-a79c-4494-be4a-3ce857a218e7\", \"columnName\": \"Column 1\", \"columnKey\": \"col1\", \"columnWidth\": \"12\", \"seedComponents\": []}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "dxpStyle": {}
+                      },
+                      "definition": "c:twwContentPages",
+                      "id": "9de82d2e-a5d6-4f0a-910e-330f41fcf61e",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "c709bb81-a79c-4494-be4a-3ce857a218e7",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "b88460ea-2b5b-49ea-a650-6676506ecc83",
+              "type": "component"
+            }
+          ],
+          "id": "06452efe-7397-47cd-9c2a-2f7d9443d9e7",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "dxpStyle": {},
+                "pageTitle": "eLearning Initiatives",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "09815e8f-9fd0-4440-9435-c5fa85870ea4",
+              "type": "component"
+            }
+          ],
+          "id": "989fbcf7-f1d2-4ea2-9889-260d9fe0d21b",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "3772a0cd-af3d-4df0-b399-a33c88a3f986",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "custom-initiative-elearning-initiatives"
+  },
+  "urlName": "initiative-elearning-initiatives"
+}

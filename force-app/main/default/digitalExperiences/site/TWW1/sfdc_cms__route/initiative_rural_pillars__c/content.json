@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "7 Pillars of Rural Transformation",
+  "contentBody": {
+    "activeViewId": "InitiativeRuralPillars",
+    "configurationTags": [],
+    "pageAccess": "Public",
+    "routeType": "custom-initiative-rural-transformation-pillars",
+    "urlPrefix": "initiatives/rural-transformation-pillars"
+  },
+  "urlName": "initiative-rural-transformation-pillars"
+}

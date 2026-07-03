@@ -1,0 +1,82 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "About Us",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {},
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\":\"e1d35785-98e5-5ca8-9664-e0813eac85b7\",\"columns\":[{\"UUID\":\"682c5f8a-73f8-5140-9927-843328dc3975\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "dxpStyle": {}
+                      },
+                      "definition": "c:twwContentPages",
+                      "id": "4ae2ad1f-c3ca-5f81-9b1c-92535c471daa",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "682c5f8a-73f8-5140-9927-843328dc3975",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "e1d35785-98e5-5ca8-9664-e0813eac85b7",
+              "type": "component"
+            }
+          ],
+          "id": "90605204-2755-5267-af09-f893044510a5",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "dxpStyle": {},
+                "pageTitle": "About Us",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "8c2605f0-4283-5092-a336-4948e279d67d",
+              "type": "component"
+            }
+          ],
+          "id": "fddbd49d-f217-5475-947c-8309f23256b6",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "49910798-846c-506e-a570-b42d48803c57",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "custom-about"
+  },
+  "urlName": "about"
+}

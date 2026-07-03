@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "LandingPage",
+  "contentBody" : {
+    "activeViewId" : "LandingPage",
+    "configurationTags" : [ ],
+    "pageAccess" : "Public",
+    "routeType" : "custom-landingpage",
+    "urlPrefix" : "landingpage"
+  },
+  "urlName" : "landingpage"
+}

@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "Our Team",
+  "contentBody": {
+    "activeViewId": "InitiativeOurTeam",
+    "configurationTags": [],
+    "pageAccess": "Public",
+    "routeType": "custom-initiative-our-team",
+    "urlPrefix": "initiatives/our-team"
+  },
+  "urlName": "initiative-our-team"
+}

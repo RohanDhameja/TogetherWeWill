@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "Psychology and Mental Well-being",
+  "contentBody": {
+    "activeViewId": "InitiativePsychology",
+    "configurationTags": [],
+    "pageAccess": "Public",
+    "routeType": "custom-initiative-psychology-mental-wellbeing",
+    "urlPrefix": "initiatives/psychology-mental-wellbeing"
+  },
+  "urlName": "initiative-psychology-mental-wellbeing"
+}

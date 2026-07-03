@@ -1,0 +1,167 @@
+/**
+* @File Name : volunteerRegistrationForm.css
+* @Description : Styling for Volunteer Registration Form Modal - NGO Theme
+* @Author : Accenture
+* @Last Modified By :
+* @Last Modified On :
+* @Modification Log :
+**/
+
+/* Modal Header Custom Styling */
+.modal-header-custom {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-bottom: none;
+    padding: 1.5rem;
+}
+
+.modal-title {
+    color: white;
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.modal-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Modal Content Custom Styling */
+.modal-content-custom {
+    background-color: #f8f9fa;
+}
+
+/* Modal Footer Custom Styling */
+.modal-footer-custom {
+    background-color: #ffffff;
+    border-top: 1px solid #e9ecef;
+    padding: 1rem 1.5rem;
+}
+
+/* Button Styling for NGO Theme */
+.slds-button_brand {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 25px;
+    padding: 0.5rem 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.slds-button_brand:hover:not([disabled]) {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.slds-button_neutral {
+    border-radius: 25px;
+    padding: 0.5rem 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.slds-button_neutral:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Styling */
+.slds-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Input Field Styling */
+.slds-input,
+.slds-textarea,
+.slds-combobox__input,
+.slds-select {
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    transition: all 0.3s ease;
+}
+
+.slds-input:focus,
+.slds-textarea:focus,
+.slds-combobox__input:focus,
+.slds-select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Dual Listbox Styling */
+.slds-dueling-list__column {
+    border-radius: 8px;
+}
+
+/* File Upload Styling */
+.slds-file-selector__button {
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    border: 2px dashed #dee2e6;
+    transition: all 0.3s ease;
+}
+
+.slds-file-selector__button:hover {
+    border-color: #667eea;
+    background-color: rgba(102, 126, 234, 0.05);
+}
+
+/* Error Alert Styling */
+.slds-alert_error {
+    border-radius: 8px;
+    border-left: 4px solid #c23934;
+}
+
+/* Success Text Color */
+.slds-text-color_success {
+    color: #2e844a;
+    font-weight: 500;
+}
+
+/* Responsive Grid Gutters */
+.slds-gutters {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+}
+
+.slds-gutters > .slds-col {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 1rem;
+}
+
+/* Modal Animation */
+.slds-modal {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Backdrop Styling */
+.slds-backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Accessibility - Focus Visible */
+*:focus-visible {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}

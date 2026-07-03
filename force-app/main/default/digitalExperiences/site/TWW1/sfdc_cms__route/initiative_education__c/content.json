@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "Education",
+  "contentBody": {
+    "activeViewId": "InitiativeEducation",
+    "configurationTags": [],
+    "pageAccess": "Public",
+    "routeType": "custom-initiative-education",
+    "urlPrefix": "initiatives/education"
+  },
+  "urlName": "initiative-education"
+}

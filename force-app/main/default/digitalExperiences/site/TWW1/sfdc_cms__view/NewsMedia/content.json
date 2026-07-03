@@ -1,0 +1,82 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "News and Media",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {},
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\":\"796d296a-c41b-58aa-89bf-bc8fc172848e\",\"columns\":[{\"UUID\":\"c0444a4d-e551-5ac5-a21a-44d3f8d7304a\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "dxpStyle": {}
+                      },
+                      "definition": "c:twwContentPages",
+                      "id": "e73f9651-2090-5517-bbc0-b255a3ba57a0",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "c0444a4d-e551-5ac5-a21a-44d3f8d7304a",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "796d296a-c41b-58aa-89bf-bc8fc172848e",
+              "type": "component"
+            }
+          ],
+          "id": "35837a58-f2c9-5dec-81ac-2f3d4986beba",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "dxpStyle": {},
+                "pageTitle": "News and Media",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "a6a8fd04-dc47-5867-bc12-9e9979a6c80e",
+              "type": "component"
+            }
+          ],
+          "id": "df2c6194-208f-5060-bd89-a0f1487425f7",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "a261f57a-6528-5e5d-8f3a-882d0f9d34f6",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "custom-news-media"
+  },
+  "urlName": "news-media"
+}

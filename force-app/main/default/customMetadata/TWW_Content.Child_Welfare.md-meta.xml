@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Child Welfare</label>
+    <protected>false</protected>
+    <values>
+        <field>Category__c</field>
+        <value xsi:type="xsd:string">What we do</value>
+    </values>
+    <values>
+        <field>Description__c</field>
+        <value xsi:type="xsd:string">Ensuring every child has access to safe shelter, nutritious food, healthcare, and a nurturing environment where they can thrive.</value>
+    </values>
+    <values>
+        <field>Details__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Title__c</field>
+        <value xsi:type="xsd:string">Child Welfare</value>
+    </values>
+</CustomMetadata>

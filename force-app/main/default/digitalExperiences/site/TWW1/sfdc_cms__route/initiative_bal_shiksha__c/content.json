@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "Bal Shiksha Kendras",
+  "contentBody": {
+    "activeViewId": "InitiativeBalShiksha",
+    "configurationTags": [],
+    "pageAccess": "Public",
+    "routeType": "custom-initiative-bal-shiksha-kendras",
+    "urlPrefix": "initiatives/bal-shiksha-kendras"
+  },
+  "urlName": "initiative-bal-shiksha-kendras"
+}

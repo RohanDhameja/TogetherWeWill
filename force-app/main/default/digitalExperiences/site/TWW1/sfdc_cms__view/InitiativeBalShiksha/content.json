@@ -1,0 +1,82 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Bal Shiksha Kendras",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {},
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\": \"9bfcf5d1-f170-4adf-bec6-fba743a463fc\", \"columns\": [{\"UUID\": \"eeccc04d-b9ca-4cda-99dd-1c71ae6ea392\", \"columnName\": \"Column 1\", \"columnKey\": \"col1\", \"columnWidth\": \"12\", \"seedComponents\": []}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "dxpStyle": {}
+                      },
+                      "definition": "c:twwContentPages",
+                      "id": "1779affc-5908-400d-87d7-53d22df7e79e",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "eeccc04d-b9ca-4cda-99dd-1c71ae6ea392",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "9bfcf5d1-f170-4adf-bec6-fba743a463fc",
+              "type": "component"
+            }
+          ],
+          "id": "f7612be8-80f5-4101-a834-e7b91e2c5edc",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "dxpStyle": {},
+                "pageTitle": "Bal Shiksha Kendras",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "9965fff7-ddbe-44d3-9d7d-dd1530af2ba6",
+              "type": "component"
+            }
+          ],
+          "id": "cd6f315e-3d4a-40db-901d-6391066ed91c",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "d2fb73e0-c351-42fc-967d-bda0826cf1a6",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "custom-initiative-bal-shiksha-kendras"
+  },
+  "urlName": "initiative-bal-shiksha-kendras"
+}

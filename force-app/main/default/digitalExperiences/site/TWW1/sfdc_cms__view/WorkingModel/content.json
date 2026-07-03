@@ -1,0 +1,82 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Our Working Model",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {},
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\":\"258c85b5-cb9c-540d-a1b5-9a398a5f2f5a\",\"columns\":[{\"UUID\":\"f8e3fe33-c030-551a-9fc1-00d7d013ad18\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "dxpStyle": {}
+                      },
+                      "definition": "c:twwContentPages",
+                      "id": "74aa2642-d97b-5f84-9e2f-78f836921a8a",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "f8e3fe33-c030-551a-9fc1-00d7d013ad18",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "258c85b5-cb9c-540d-a1b5-9a398a5f2f5a",
+              "type": "component"
+            }
+          ],
+          "id": "a2372663-c39d-50c2-8e82-87cbdd951d36",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "dxpStyle": {},
+                "pageTitle": "Our Working Model",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "95721159-94c7-515b-b8d3-99f018523c48",
+              "type": "component"
+            }
+          ],
+          "id": "6ee0bb4f-ceef-5b77-ac28-6277616e0505",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "694843de-ed07-52b0-90da-04069df240ab",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "custom-working-model"
+  },
+  "urlName": "working-model"
+}

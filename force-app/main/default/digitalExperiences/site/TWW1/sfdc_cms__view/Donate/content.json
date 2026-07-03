@@ -1,0 +1,82 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Donate",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {},
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\":\"79756dae-1447-5b55-ac9d-bd7c223b51a1\",\"columns\":[{\"UUID\":\"83bc6167-4ea1-593c-bf80-c4f2e942e88f\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "dxpStyle": {}
+                      },
+                      "definition": "c:twwContentPages",
+                      "id": "2f338be3-1718-55ee-a1a3-c0766668e106",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "83bc6167-4ea1-593c-bf80-c4f2e942e88f",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "79756dae-1447-5b55-ac9d-bd7c223b51a1",
+              "type": "component"
+            }
+          ],
+          "id": "1a79850c-175a-55e3-a923-fd3ac341a4cf",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "dxpStyle": {},
+                "pageTitle": "Donate",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "fbc6bd3f-5997-5540-a479-2c79d443f4ff",
+              "type": "component"
+            }
+          ],
+          "id": "38b5b2d3-7ba7-5d24-a42b-0e3e94d9fe52",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "b0ff8dce-abbf-5e1b-8920-b98313a932da",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "custom-donate"
+  },
+  "urlName": "donate"
+}

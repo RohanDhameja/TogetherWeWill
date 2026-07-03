@@ -1,0 +1,227 @@
+<!--
+/**
+* @File Name : volunteerRegistrationForm.html
+* @Description : Volunteer Registration Form Modal for Together We Will NGO Portal using Account object
+* @Author : Accenture
+* @Last Modified By :
+* @Last Modified On :
+* @Modification Log :
+**/
+-->
+<template>
+    <template if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" 
+                 class="slds-modal slds-fade-in-open slds-modal_large">
+            <div class="slds-modal__container">
+                <!-- Modal Header -->
+                <header class="slds-modal__header modal-header-custom">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" 
+                            title="Close" onclick={closeModal} aria-label="Close">
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate modal-title">
+                        Become a Volunteer
+                    </h2>
+                    <p class="slds-m-top_x-small modal-subtitle">
+                        Join us in making a difference. Fill out the form below to register as a volunteer.
+                    </p>
+                </header>
+
+                <!-- Modal Body -->
+                <div class="slds-modal__content slds-p-around_medium modal-content-custom" id="modal-content-id-1">
+                    <lightning-card>
+                        <div class="slds-grid slds-wrap slds-gutters">
+                            <!-- First Name -->
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                <lightning-input 
+                                    label="First Name" 
+                                    name="firstName" 
+                                    value={firstName} 
+                                    onchange={handleInputChange}
+                                    required
+                                    placeholder="Enter your first name"
+                                    aria-label="First Name">
+                                </lightning-input>
+                            </div>
+
+                            <!-- Last Name -->
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                <lightning-input 
+                                    label="Last Name" 
+                                    name="lastName" 
+                                    value={lastName} 
+                                    onchange={handleInputChange}
+                                    required
+                                    placeholder="Enter your last name"
+                                    aria-label="Last Name">
+                                </lightning-input>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                <lightning-input 
+                                    label="Email" 
+                                    name="email" 
+                                    type="email" 
+                                    value={email} 
+                                    onchange={handleInputChange}
+                                    required
+                                    placeholder="Enter your email address"
+                                    aria-label="Email">
+                                </lightning-input>
+                            </div>
+
+                            <!-- Mobile Number (Work Phone) -->
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                <lightning-input 
+                                    label="Mobile Number" 
+                                    name="mobileNumber" 
+                                    type="tel" 
+                                    value={mobileNumber} 
+                                    onchange={handleInputChange}
+                                    required
+                                    placeholder="Enter 10-digit mobile number"
+                                    pattern="[6-9][0-9]{9}"
+                                    message-when-pattern-mismatch="Please enter a valid 10-digit Indian mobile number"
+                                    aria-label="Mobile Number">
+                                </lightning-input>
+                            </div>
+
+                            <!-- Industry/Profession -->
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                <lightning-input 
+                                    label="Profession / Industry" 
+                                    name="industry" 
+                                    value={industry} 
+                                    onchange={handleInputChange}
+                                    placeholder="e.g., IT, Healthcare, Education"
+                                    aria-label="Profession">
+                                </lightning-input>
+                            </div>
+
+                            <!-- PAN Number (ID Proof) -->
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                <lightning-input 
+                                    label="PAN Number (Optional)" 
+                                    name="panNumber" 
+                                    value={panNumber} 
+                                    onchange={handleInputChange}
+                                    placeholder="Enter PAN number"
+                                    maxlength="10"
+                                    aria-label="PAN Number">
+                                </lightning-input>
+                            </div>
+
+                            <!-- Skills / Areas of Interest -->
+                            <div class="slds-col slds-size_1-of-1">
+                                <lightning-dual-listbox
+                                    label="Skills / Areas of Interest"
+                                    name="skills"
+                                    source-label="Available Skills"
+                                    selected-label="Selected Skills"
+                                    options={skillsOptions}
+                                    value={skills}
+                                    onchange={handleInputChange}
+                                    min="0"
+                                    max="12"
+                                    aria-label="Skills and Areas of Interest">
+                                </lightning-dual-listbox>
+                            </div>
+
+                            <!-- Address Section -->
+                            <div class="slds-col slds-size_1-of-1">
+                                <h3 class="slds-text-heading_small slds-m-bottom_small">Address</h3>
+                            </div>
+
+                            <!-- Street -->
+                            <div class="slds-col slds-size_1-of-1">
+                                <lightning-input 
+                                    label="Street Address" 
+                                    name="street" 
+                                    value={street} 
+                                    onchange={handleInputChange}
+                                    placeholder="Enter street address"
+                                    aria-label="Street Address">
+                                </lightning-input>
+                            </div>
+
+                            <!-- City -->
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                                <lightning-input 
+                                    label="City" 
+                                    name="city" 
+                                    value={city} 
+                                    onchange={handleInputChange}
+                                    placeholder="Enter city"
+                                    aria-label="City">
+                                </lightning-input>
+                            </div>
+
+                            <!-- State -->
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                                <lightning-combobox
+                                    label="State"
+                                    name="state"
+                                    value={state}
+                                    placeholder="Select State"
+                                    options={stateOptions}
+                                    onchange={handleInputChange}
+                                    aria-label="State">
+                                </lightning-combobox>
+                            </div>
+
+                            <!-- Postal Code -->
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                                <lightning-input 
+                                    label="Postal Code" 
+                                    name="postalCode" 
+                                    value={postalCode} 
+                                    onchange={handleInputChange}
+                                    placeholder="Enter postal code"
+                                    maxlength="6"
+                                    aria-label="Postal Code">
+                                </lightning-input>
+                            </div>
+
+                            <!-- Availability -->
+                            <div class="slds-col slds-size_1-of-1">
+                                <lightning-textarea 
+                                    label="Availability (Days & Time)" 
+                                    name="availability" 
+                                    value={availability} 
+                                    onchange={handleInputChange}
+                                    placeholder="E.g., Weekends 10AM-2PM, Weekdays evenings after 6PM"
+                                    max-length="500"
+                                    aria-label="Availability">
+                                </lightning-textarea>
+                            </div>
+                        </div>
+
+                        <!-- Error Messages -->
+                        <template if:true={errorMessage}>
+                            <div class="slds-m-top_medium">
+                                <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+                                    <span class="slds-assistive-text">error</span>
+                                    <h2>{errorMessage}</h2>
+                                </div>
+                            </div>
+                        </template>
+                    </lightning-card>
+                </div>
+
+                <!-- Modal Footer -->
+                <footer class="slds-modal__footer modal-footer-custom">
+                    <button class="slds-button slds-button_neutral" onclick={closeModal} aria-label="Cancel">
+                        Cancel
+                    </button>
+                    <button class="slds-button slds-button_brand" onclick={handleSubmit} 
+                            disabled={isSubmitting} aria-label="Submit">
+                        <template if:false={isSubmitting}>Submit</template>
+                        <template if:true={isSubmitting}>Submitting...</template>
+                    </button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

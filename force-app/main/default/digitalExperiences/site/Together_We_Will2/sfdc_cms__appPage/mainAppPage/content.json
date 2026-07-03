@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__appPage",
+  "title" : "main",
+  "contentBody" : {
+    "currentThemeId" : "Build_Your_Own_LWR",
+    "headMarkup" : "<link href=\"{!URLFOR($Resource.TWW_Portal_Branding)}\" rel=\"stylesheet\" type=\"text/css\" />\n<style>\n:root {\n    --tww-primary-color: #016402;\n    --tww-secondary-color: #0a8f08;\n    --tww-accent-color: #6fbf73;\n}\n.siteforceContentArea { \n    padding: 0 !important; \n}\n.comm-page-row { \n    max-width: 100% !important; \n    margin: 0 !important; \n}\n</style>",
+    "isLockerServiceEnabled" : true,
+    "isRelaxedCSPLevel" : false,
+    "templateName" : "talon-template-byo"
+  },
+  "urlName" : "main"
+}

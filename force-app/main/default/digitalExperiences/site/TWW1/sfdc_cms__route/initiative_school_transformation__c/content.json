@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "Government School Transformation",
+  "contentBody": {
+    "activeViewId": "InitiativeSchoolTransformation",
+    "configurationTags": [],
+    "pageAccess": "Public",
+    "routeType": "custom-initiative-government-school-transformation",
+    "urlPrefix": "initiatives/government-school-transformation"
+  },
+  "urlName": "initiative-government-school-transformation"
+}

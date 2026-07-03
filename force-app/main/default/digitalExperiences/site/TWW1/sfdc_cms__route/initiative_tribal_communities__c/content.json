@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "Support for Tribal Communities",
+  "contentBody": {
+    "activeViewId": "InitiativeTribalCommunities",
+    "configurationTags": [],
+    "pageAccess": "Public",
+    "routeType": "custom-initiative-support-for-tribal-communities",
+    "urlPrefix": "initiatives/support-for-tribal-communities"
+  },
+  "urlName": "initiative-support-for-tribal-communities"
+}

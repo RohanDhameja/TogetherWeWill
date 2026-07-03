@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "Child Welfare",
+  "contentBody": {
+    "activeViewId": "InitiativeChildWelfare",
+    "configurationTags": [],
+    "pageAccess": "Public",
+    "routeType": "custom-initiative-child-welfare",
+    "urlPrefix": "initiatives/child-welfare"
+  },
+  "urlName": "initiative-child-welfare"
+}

@@ -1,0 +1,82 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Volunteer",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "dxpStyle": {},
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\":\"46d60d64-1f87-5f55-9233-4785d3445ad4\",\"columns\":[{\"UUID\":\"2938a00a-e3d4-591b-96e3-af0182bda03a\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "dxpStyle": {}
+                      },
+                      "definition": "c:twwContentPages",
+                      "id": "e8cc05cb-800c-58f4-967d-b55667ae1641",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "2938a00a-e3d4-591b-96e3-af0182bda03a",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "46d60d64-1f87-5f55-9233-4785d3445ad4",
+              "type": "component"
+            }
+          ],
+          "id": "b4ae923d-1fc7-557c-ae17-be4de8dd4956",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "dxpStyle": {},
+                "pageTitle": "Volunteer",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "69b3bbb8-2c25-512c-b7b2-0d9d0dc9bbd8",
+              "type": "component"
+            }
+          ],
+          "id": "732ceb90-544c-5c44-b69c-114ed616b870",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "73436002-9056-5440-b2fb-c9d8892ed53a",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "custom-volunteer"
+  },
+  "urlName": "volunteer"
+}
