@@ -1,18 +1,14 @@
 <template>
     <header class="navbar">
         <div class="nav-container">
-            <a class="nav-logo" href="/togetherwewill/">
+            <a class="nav-logo" href={homeHref}>
                 <img src={foundationLogo} alt="TWW Logo" class="logo-img" />
                 <span class="logo-text">Together We Will</span>
             </a>
             <nav class="nav-menu">
-                <a href="/togetherwewill/" class="nav-link nav-link-active">Home</a>
-                <a href="/togetherwewill/about" class="nav-link">About</a>
-                <a href="/togetherwewill/working-model" class="nav-link">Model</a>
-                <a href="/togetherwewill/initiatives" class="nav-link">Initiatives</a>
-                <a href="/togetherwewill/impact" class="nav-link">Impact</a>
-                <a href="/togetherwewill/partners" class="nav-link">Partners</a>
-                <a href="/togetherwewill/contact" class="nav-link">Contact</a>
+                <template for:each={navItems} for:item="item">
+                    <a key={item.key} href={item.href} class={item.className}>{item.label}</a>
+                </template>
             </nav>
             <button class="btn-nav-donate" onclick={handleDonate}>Donate</button>
         </div>
@@ -78,7 +74,7 @@
                             <div class="card-body">
                                 <h3>{area.title}</h3>
                                 <p>{area.description}</p>
-                                <a href="/togetherwewill/initiatives">Explore Initiatives</a>
+                                <a href={initiativesHref}>Explore Initiatives</a>
                             </div>
                         </article>
                     </template>
@@ -94,7 +90,7 @@
                     <p>
                         The revised site includes stories of change, impact reporting, and a clear path for volunteers, CSR partners, and donors to take action.
                     </p>
-                    <a class="btn-primary" href="/togetherwewill/impact">View Impact</a>
+                    <a class="btn-primary" href={impactHref}>View Impact</a>
                 </article>
                 <aside class="photo-panel">
                     <img src={impactStoryImage} alt="TWW success story visual" />
@@ -137,18 +133,15 @@
             </div>
             <div>
                 <h5>Quick Links</h5>
-                <a href="/togetherwewill/about">About Us</a>
-                <a href="/togetherwewill/working-model">Working Model</a>
-                <a href="/togetherwewill/initiatives">Flagship Initiatives</a>
-                <a href="/togetherwewill/impact">Impact</a>
-                <a href="/togetherwewill/partners">Partners</a>
+                <template for:each={footerPrimaryLinks} for:item="link">
+                    <a key={link.id} href={link.href}>{link.label}</a>
+                </template>
             </div>
             <div>
                 <h5>Get Involved</h5>
-                <a href="/togetherwewill/get-involved">Volunteer</a>
-                <a href="/togetherwewill/donate">Donate</a>
-                <a href="/togetherwewill/news-media">News and Media</a>
-                <a href="/togetherwewill/legal">Legal and Compliance</a>
+                <template for:each={footerActionLinks} for:item="link">
+                    <a key={link.id} href={link.href}>{link.label}</a>
+                </template>
             </div>
             <div>
                 <h5>Contact Us</h5>

@@ -9,6 +9,28 @@ import CHILD_PROTECTION_POLICY from '@salesforce/resourceUrl/TWW_Child_Protectio
 import DONATION_POLICY from '@salesforce/resourceUrl/TWW_Donation_Policy';
 
 const asset = (fileName) => `${SITE_IMAGES}/${fileName}`;
+const CUSTOM_DOMAIN = 'togetherwewill.org.in';
+const FALLBACK_SITE_PREFIX = '/togetherwewill';
+
+const normalizePath = (path) => {
+    if (!path || path === '/') {
+        return '/';
+    }
+
+    return `/${path.replace(/^\/+/, '')}`;
+};
+
+const isCustomDomain = () => window.location.hostname.endsWith(CUSTOM_DOMAIN);
+
+const sitePath = (path) => {
+    const normalized = normalizePath(path);
+
+    if (isCustomDomain()) {
+        return normalized;
+    }
+
+    return normalized === '/' ? `${FALLBACK_SITE_PREFIX}/` : `${FALLBACK_SITE_PREFIX}${normalized}`;
+};
 
 const REPORT_2021_22_URL = 'https://togetherwewillfoundation2--twwdev.sandbox.my.salesforce.com/sfc/p/7100000318hl/a/71000002Bg61/0rZvDEgI3qb2R63._wuKgTIi5fwmFydNz4YmUmDTSpk';
 const REPORT_2022_23_URL = 'https://togetherwewillfoundation2--twwdev.sandbox.my.salesforce.com/sfc/p/7100000318hl/a/71000002Bg9F/entxdd6u3E1gUzRRVIdEcRiHwJmxJwaB78kXGAW_iNk';
@@ -20,14 +42,14 @@ const WEB_TO_LEAD_SANDBOX_ORG_ID = '00D7100000318hl';
 const WEB_TO_LEAD_PROD_ORG_ID = '00Df6000000UiA5';
 
 const NAV_ITEMS = [
-    { key: 'home', label: 'Home', href: '/togetherwewill/' },
-    { key: 'about', label: 'About', href: '/togetherwewill/about' },
-    { key: 'working-model', label: 'Model', href: '/togetherwewill/working-model' },
-    { key: 'initiatives', label: 'Initiatives', href: '/togetherwewill/initiatives' },
-    { key: 'impact', label: 'Impact', href: '/togetherwewill/impact' },
-    { key: 'partners', label: 'Partners', href: '/togetherwewill/partners' },
-    { key: 'get-involved', label: 'Get Involved', href: '/togetherwewill/get-involved' },
-    { key: 'contact', label: 'Contact', href: '/togetherwewill/contact' }
+    { key: 'home', label: 'Home', path: '/' },
+    { key: 'about', label: 'About', path: '/about' },
+    { key: 'working-model', label: 'Model', path: '/working-model' },
+    { key: 'initiatives', label: 'Initiatives', path: '/initiatives' },
+    { key: 'impact', label: 'Impact', path: '/impact' },
+    { key: 'partners', label: 'Partners', path: '/partners' },
+    { key: 'get-involved', label: 'Get Involved', path: '/get-involved' },
+    { key: 'contact', label: 'Contact', path: '/contact' }
 ];
 
 const IMPACT_STATS = [
@@ -125,7 +147,7 @@ const IMPACT_CYCLE = [
     'Scale successful models'
 ];
 
-const initiativeHref = (slug) => `/togetherwewill/initiatives/${slug}`;
+const initiativeHref = (slug) => `/initiatives/${slug}`;
 
 const INITIATIVES = [
     {
@@ -1088,10 +1110,19 @@ export default class TwwContentPages extends NavigationMixin(LightningElement) {
         return PAGES[this.currentKey] || PAGES.about;
     }
 
+    get homeHref() {
+        return sitePath('/');
+    }
+
+    get reachOutHref() {
+        return sitePath('/get-involved/reach-out');
+    }
+
     get navItems() {
         const activeSection = this.page.section || this.currentKey;
         return NAV_ITEMS.map((item) => ({
             ...item,
+            href: sitePath(item.path),
             className: item.key === activeSection ? 'nav-link nav-link-active' : 'nav-link'
         }));
     }
@@ -1173,7 +1204,10 @@ export default class TwwContentPages extends NavigationMixin(LightningElement) {
     }
 
     get initiatives() {
-        return INITIATIVES;
+        return INITIATIVES.map((initiative) => ({
+            ...initiative,
+            href: sitePath(initiative.href)
+        }));
     }
 
     get initiativeSections() {
@@ -1181,7 +1215,10 @@ export default class TwwContentPages extends NavigationMixin(LightningElement) {
     }
 
     get initiativeRelatedLinks() {
-        return this.page.relatedLinks || [];
+        return (this.page.relatedLinks || []).map((link) => ({
+            ...link,
+            href: sitePath(link.href)
+        }));
     }
 
     get ruralPillars() {
@@ -1241,7 +1278,7 @@ export default class TwwContentPages extends NavigationMixin(LightningElement) {
     }
 
     get webToLeadReturnUrl() {
-        return `${window.location.origin}/togetherwewill/get-involved/reach-out?submitted=1`;
+        return `${window.location.origin}${sitePath('/get-involved/reach-out')}?submitted=1`;
     }
 
     get showReachOutSubmitted() {
@@ -1250,22 +1287,28 @@ export default class TwwContentPages extends NavigationMixin(LightningElement) {
 
     get footerPrimaryLinks() {
         return [
-            { id: 'about', label: 'About Us', href: '/togetherwewill/about' },
-            { id: 'model', label: 'Working Model', href: '/togetherwewill/working-model' },
-            { id: 'initiatives', label: 'Flagship Initiatives', href: '/togetherwewill/initiatives' },
-            { id: 'impact', label: 'Impact', href: '/togetherwewill/impact' },
-            { id: 'partners', label: 'Partners', href: '/togetherwewill/partners' }
-        ];
+            { id: 'about', label: 'About Us', path: '/about' },
+            { id: 'model', label: 'Working Model', path: '/working-model' },
+            { id: 'initiatives', label: 'Flagship Initiatives', path: '/initiatives' },
+            { id: 'impact', label: 'Impact', path: '/impact' },
+            { id: 'partners', label: 'Partners', path: '/partners' }
+        ].map((link) => ({
+            ...link,
+            href: sitePath(link.path)
+        }));
     }
 
     get footerActionLinks() {
         return [
-            { id: 'get-involved', label: 'Get Involved', href: '/togetherwewill/get-involved' },
-            { id: 'reach-out', label: 'Reach Out to Us', href: '/togetherwewill/get-involved/reach-out' },
-            { id: 'donate', label: 'Donate', href: '/togetherwewill/donate' },
-            { id: 'news', label: 'News and Media', href: '/togetherwewill/news-media' },
-            { id: 'legal', label: 'Legal and Compliance', href: '/togetherwewill/legal' }
-        ];
+            { id: 'get-involved', label: 'Get Involved', path: '/get-involved' },
+            { id: 'reach-out', label: 'Reach Out to Us', path: '/get-involved/reach-out' },
+            { id: 'donate', label: 'Donate', path: '/donate' },
+            { id: 'news', label: 'News and Media', path: '/news-media' },
+            { id: 'legal', label: 'Legal and Compliance', path: '/legal' }
+        ].map((link) => ({
+            ...link,
+            href: sitePath(link.path)
+        }));
     }
 
     handleReachOutSubmit(event) {
@@ -1295,7 +1338,7 @@ export default class TwwContentPages extends NavigationMixin(LightningElement) {
         this[NavigationMixin.Navigate]({
             type: 'standard__webPage',
             attributes: {
-                url: '/togetherwewill/donate'
+                url: sitePath('/donate')
             }
         });
     }

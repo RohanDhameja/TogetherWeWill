@@ -5,6 +5,53 @@ import INCLUSIVE_HEART_LOGO from '@salesforce/resourceUrl/InclusiveHeartLogo';
 import SITE_IMAGES from '@salesforce/resourceUrl/TWW_Site_Images';
 
 const image = (fileName) => `${SITE_IMAGES}/${fileName}`;
+const CUSTOM_DOMAIN = 'togetherwewill.org.in';
+const FALLBACK_SITE_PREFIX = '/togetherwewill';
+
+const normalizePath = (path) => {
+    if (!path || path === '/') {
+        return '/';
+    }
+
+    return `/${path.replace(/^\/+/, '')}`;
+};
+
+const isCustomDomain = () => window.location.hostname.endsWith(CUSTOM_DOMAIN);
+
+const sitePath = (path) => {
+    const normalized = normalizePath(path);
+
+    if (isCustomDomain()) {
+        return normalized;
+    }
+
+    return normalized === '/' ? `${FALLBACK_SITE_PREFIX}/` : `${FALLBACK_SITE_PREFIX}${normalized}`;
+};
+
+const NAV_ITEMS = [
+    { key: 'home', label: 'Home', path: '/' },
+    { key: 'about', label: 'About', path: '/about' },
+    { key: 'working-model', label: 'Model', path: '/working-model' },
+    { key: 'initiatives', label: 'Initiatives', path: '/initiatives' },
+    { key: 'impact', label: 'Impact', path: '/impact' },
+    { key: 'partners', label: 'Partners', path: '/partners' },
+    { key: 'contact', label: 'Contact', path: '/contact' }
+];
+
+const FOOTER_PRIMARY_LINKS = [
+    { id: 'about', label: 'About Us', path: '/about' },
+    { id: 'model', label: 'Working Model', path: '/working-model' },
+    { id: 'initiatives', label: 'Flagship Initiatives', path: '/initiatives' },
+    { id: 'impact', label: 'Impact', path: '/impact' },
+    { id: 'partners', label: 'Partners', path: '/partners' }
+];
+
+const FOOTER_ACTION_LINKS = [
+    { id: 'get-involved', label: 'Volunteer', path: '/get-involved' },
+    { id: 'donate', label: 'Donate', path: '/donate' },
+    { id: 'news', label: 'News and Media', path: '/news-media' },
+    { id: 'legal', label: 'Legal and Compliance', path: '/legal' }
+];
 
 const FOCUS_AREAS = [
     {
@@ -78,20 +125,54 @@ export default class TwwHomePageV2 extends NavigationMixin(LightningElement) {
         return `background-image: linear-gradient(90deg, rgba(18, 51, 35, 0.9), rgba(18, 51, 35, 0.62)), url(${this.heroImage});`;
     }
 
+    get homeHref() {
+        return sitePath('/');
+    }
+
+    get initiativesHref() {
+        return sitePath('/initiatives');
+    }
+
+    get impactHref() {
+        return sitePath('/impact');
+    }
+
+    get navItems() {
+        return NAV_ITEMS.map((item) => ({
+            ...item,
+            href: sitePath(item.path),
+            className: item.key === 'home' ? 'nav-link nav-link-active' : 'nav-link'
+        }));
+    }
+
+    get footerPrimaryLinks() {
+        return FOOTER_PRIMARY_LINKS.map((link) => ({
+            ...link,
+            href: sitePath(link.path)
+        }));
+    }
+
+    get footerActionLinks() {
+        return FOOTER_ACTION_LINKS.map((link) => ({
+            ...link,
+            href: sitePath(link.path)
+        }));
+    }
+
     handleDonate() {
-        this.navigateTo('/togetherwewill/donate');
+        this.navigateTo(sitePath('/donate'));
     }
 
     handleVolunteer() {
-        this.navigateTo('/togetherwewill/get-involved');
+        this.navigateTo(sitePath('/get-involved'));
     }
 
     handleContact() {
-        this.navigateTo('/togetherwewill/contact');
+        this.navigateTo(sitePath('/contact'));
     }
 
     handleShare() {
-        const shareUrl = 'https://togetherwewillfoundation2--twwdev.sandbox.my.site.com/togetherwewill/';
+        const shareUrl = `${window.location.origin}${sitePath('/')}`;
         const shareText = 'Join Together We Will Foundation in transforming lives through education, child welfare, healthcare, skill development, and rural empowerment.';
 
         if (navigator.share) {
