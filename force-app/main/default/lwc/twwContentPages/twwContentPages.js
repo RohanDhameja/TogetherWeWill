@@ -13,8 +13,10 @@ const REPORT_2021_22_URL = 'https://togetherwewillfoundation2--twwdev.sandbox.my
 const REPORT_2022_23_URL = 'https://togetherwewillfoundation2--twwdev.sandbox.my.salesforce.com/sfc/p/7100000318hl/a/71000002Bg9F/entxdd6u3E1gUzRRVIdEcRiHwJmxJwaB78kXGAW_iNk';
 const REPORT_2023_24_URL = 'https://togetherwewillfoundation2--twwdev.sandbox.my.salesforce.com/sfc/p/7100000318hl/a/71000002Bg7d/63hVMATSJJZW_.yHlF9Zcr_szTEiq8.McO0MgXNF.BU';
 const REPORT_2024_25_URL = 'https://togetherwewillfoundation2--twwdev.sandbox.my.salesforce.com/sfc/p/7100000318hl/a/71000002BILR/V_3EQ_luGp.EFqVWctXvomUo9hklAbNJSFfsBR70bxk';
-const WEB_TO_LEAD_ACTION = 'https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
-const WEB_TO_LEAD_ORG_ID = '00D7100000318hl';
+const WEB_TO_LEAD_SANDBOX_ACTION = 'https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
+const WEB_TO_LEAD_PROD_ACTION = 'https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
+const WEB_TO_LEAD_SANDBOX_ORG_ID = '00D7100000318hl';
+const WEB_TO_LEAD_PROD_ORG_ID = '00Df6000000UiA5';
 
 const NAV_ITEMS = [
     { key: 'home', label: 'Home', href: '/togetherwewill/' },
@@ -1225,11 +1227,15 @@ export default class TwwContentPages extends NavigationMixin(LightningElement) {
     }
 
     get webToLeadAction() {
-        return WEB_TO_LEAD_ACTION;
+        const host = window.location.hostname;
+        const isSandboxHost = host.includes('--') || host.includes('.sandbox.');
+        return isSandboxHost ? WEB_TO_LEAD_SANDBOX_ACTION : WEB_TO_LEAD_PROD_ACTION;
     }
 
     get webToLeadOrgId() {
-        return WEB_TO_LEAD_ORG_ID;
+        const host = window.location.hostname;
+        const isSandboxHost = host.includes('--') || host.includes('.sandbox.');
+        return isSandboxHost ? WEB_TO_LEAD_SANDBOX_ORG_ID : WEB_TO_LEAD_PROD_ORG_ID;
     }
 
     get webToLeadReturnUrl() {
