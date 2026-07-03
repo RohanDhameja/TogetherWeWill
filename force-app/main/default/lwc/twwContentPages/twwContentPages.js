@@ -2,6 +2,10 @@ import { LightningElement } from 'lwc';
 import { NavigationMixin } from 'lightning/navigation';
 import FOUNDATION_LOGO from '@salesforce/resourceUrl/FoundationLogo';
 import SITE_IMAGES from '@salesforce/resourceUrl/TWW_Site_Images';
+import PRIVACY_POLICY from '@salesforce/resourceUrl/TWW_Privacy_Policy';
+import TERMS_AND_CONDITIONS from '@salesforce/resourceUrl/TWW_Terms_and_Conditions';
+import CHILD_PROTECTION_POLICY from '@salesforce/resourceUrl/TWW_Child_Protection_Safeguarding_Policy';
+import DONATION_POLICY from '@salesforce/resourceUrl/TWW_Donation_Policy';
 
 const asset = (fileName) => `${SITE_IMAGES}/${fileName}`;
 
@@ -9,6 +13,8 @@ const REPORT_2021_22_URL = 'https://togetherwewillfoundation2--twwdev.sandbox.my
 const REPORT_2022_23_URL = 'https://togetherwewillfoundation2--twwdev.sandbox.my.salesforce.com/sfc/p/7100000318hl/a/71000002Bg9F/entxdd6u3E1gUzRRVIdEcRiHwJmxJwaB78kXGAW_iNk';
 const REPORT_2023_24_URL = 'https://togetherwewillfoundation2--twwdev.sandbox.my.salesforce.com/sfc/p/7100000318hl/a/71000002Bg7d/63hVMATSJJZW_.yHlF9Zcr_szTEiq8.McO0MgXNF.BU';
 const REPORT_2024_25_URL = 'https://togetherwewillfoundation2--twwdev.sandbox.my.salesforce.com/sfc/p/7100000318hl/a/71000002BILR/V_3EQ_luGp.EFqVWctXvomUo9hklAbNJSFfsBR70bxk';
+const WEB_TO_LEAD_ACTION = 'https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
+const WEB_TO_LEAD_ORG_ID = '00D7100000318hl';
 
 const NAV_ITEMS = [
     { key: 'home', label: 'Home', href: '/togetherwewill/' },
@@ -209,6 +215,11 @@ const HELP_ITEMS = [
         id: 'resources',
         title: 'Resource Donation',
         items: ['Books and stationery', 'Computers and digital equipment', 'Furniture and infrastructure', 'Healthcare supplies']
+    },
+    {
+        id: 'reach-out',
+        title: 'Reach Out to Us',
+        items: ['Volunteer interest', 'CSR and partnerships', 'Resource support', 'General enquiries']
     }
 ];
 
@@ -272,11 +283,10 @@ const CONTACT_IMAGES = [
 ];
 
 const LEGAL_ITEMS = [
-    'Child Safeguarding Policy',
-    'Privacy Policy',
-    'Terms and Conditions',
-    'Anti-Fraud Statement',
-    'Refund / Cancellation Policy for donations'
+    { id: 'privacy', label: 'Privacy Policy', url: PRIVACY_POLICY },
+    { id: 'terms', label: 'Terms and Conditions', url: TERMS_AND_CONDITIONS },
+    { id: 'child-protection', label: 'Child Protection and Safeguarding Policy', url: CHILD_PROTECTION_POLICY },
+    { id: 'donation', label: 'Donation Policy', url: DONATION_POLICY }
 ];
 
 const detailPage = ({ key, label, title, intro, image, stats, sections, relatedLinks }) => ({
@@ -977,6 +987,19 @@ const PAGES = {
             { id: 'countries', value: '3', label: 'Countries' }
         ]
     },
+    'reach-out': {
+        key: 'reach-out',
+        section: 'get-involved',
+        template: 'reachOut',
+        label: 'Reach Out to Us',
+        title: 'Reach Out to Us',
+        intro: 'Share how you would like to connect with TWW. Your enquiry will be submitted to Salesforce as a Lead for follow-up.',
+        stats: [
+            { id: 'channel', value: 'Lead', label: 'Salesforce Web-to-Lead' },
+            { id: 'response', value: 'Direct', label: 'Team follow-up' },
+            { id: 'scope', value: '4', label: 'Inquiry types' }
+        ]
+    },
     'news-media': {
         key: 'news-media',
         section: 'news-media',
@@ -1022,9 +1045,9 @@ const PAGES = {
         template: 'legal',
         label: 'Legal and Compliance',
         title: 'Policies, Transparency, and Donor Trust',
-        intro: 'The site identifies key compliance pages for safeguarding, privacy, terms, fraud prevention, and donation refund or cancellation guidance.',
+        intro: 'The site identifies key compliance pages for privacy, terms of use, child protection and safeguarding, and donation guidance.',
         stats: [
-            { id: 'policies', value: '5', label: 'Policy areas' },
+            { id: 'policies', value: '4', label: 'Policy areas' },
             { id: 'model', value: '0', label: 'Operating cost model' },
             { id: 'trust', value: '100%', label: 'Transparency commitment' }
         ]
@@ -1045,6 +1068,7 @@ export default class TwwContentPages extends NavigationMixin(LightningElement) {
     consortiumImage = asset('rural_consortium_partners.png');
     donationQrImage = asset('donation_qr.png');
     currentKey = 'about';
+    reachOutStatus = '';
 
     connectedCallback() {
         this.currentKey = this.resolvePageKey();
@@ -1098,6 +1122,10 @@ export default class TwwContentPages extends NavigationMixin(LightningElement) {
 
     get isGetInvolved() {
         return this.page.template === 'getInvolved';
+    }
+
+    get isReachOut() {
+        return this.page.template === 'reachOut';
     }
 
     get isNews() {
@@ -1196,6 +1224,22 @@ export default class TwwContentPages extends NavigationMixin(LightningElement) {
         return LEGAL_ITEMS;
     }
 
+    get webToLeadAction() {
+        return WEB_TO_LEAD_ACTION;
+    }
+
+    get webToLeadOrgId() {
+        return WEB_TO_LEAD_ORG_ID;
+    }
+
+    get webToLeadReturnUrl() {
+        return `${window.location.origin}/togetherwewill/get-involved/reach-out?submitted=1`;
+    }
+
+    get showReachOutSubmitted() {
+        return this.isReachOut && new URLSearchParams(window.location.search).get('submitted') === '1';
+    }
+
     get footerPrimaryLinks() {
         return [
             { id: 'about', label: 'About Us', href: '/togetherwewill/about' },
@@ -1209,10 +1253,34 @@ export default class TwwContentPages extends NavigationMixin(LightningElement) {
     get footerActionLinks() {
         return [
             { id: 'get-involved', label: 'Get Involved', href: '/togetherwewill/get-involved' },
+            { id: 'reach-out', label: 'Reach Out to Us', href: '/togetherwewill/get-involved/reach-out' },
             { id: 'donate', label: 'Donate', href: '/togetherwewill/donate' },
             { id: 'news', label: 'News and Media', href: '/togetherwewill/news-media' },
             { id: 'legal', label: 'Legal and Compliance', href: '/togetherwewill/legal' }
         ];
+    }
+
+    handleReachOutSubmit(event) {
+        const honeypot = this.template.querySelector('[data-honeypot]');
+        if (honeypot?.value) {
+            event.preventDefault();
+            this.reachOutStatus = 'Thank you. Your enquiry has been received.';
+            return;
+        }
+
+        const inquiryType = this.template.querySelector('[data-inquiry-type]')?.value || 'General enquiry';
+        const message = this.template.querySelector('[data-message]')?.value || '';
+        const organization = this.template.querySelector('[data-organization]')?.value || 'Individual / Website Inquiry';
+        const description = this.template.querySelector('[data-lead-description]');
+        const company = this.template.querySelector('[data-lead-company]');
+
+        if (description) {
+            description.value = `Inquiry type: ${inquiryType}\n\n${message}`;
+        }
+
+        if (company) {
+            company.value = organization;
+        }
     }
 
     handleDonate() {

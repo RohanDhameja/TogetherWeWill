@@ -350,6 +350,94 @@
                             </article>
                         </template>
                     </div>
+                    <a class="btn-primary section-action" href="/togetherwewill/get-involved/reach-out">Reach Out to Us</a>
+                </div>
+            </section>
+        </template>
+
+        <template if:true={isReachOut}>
+            <section class="content-section">
+                <div class="container split-grid reach-out-layout">
+                    <article>
+                        <span class="section-label">Reach Out to Us</span>
+                        <h2>Tell us how you would like to get involved</h2>
+                        <p>
+                            Use this form for volunteering, partnerships, resource support, or general enquiries. Submissions are sent to Salesforce through Web-to-Lead for team follow-up.
+                        </p>
+                        <div class="contact-card reach-out-note">
+                            <h3>What happens next</h3>
+                            <p>TWW will review your enquiry and connect with you using the contact details shared here.</p>
+                        </div>
+                    </article>
+                    <aside class="reach-out-card">
+                        <template if:true={showReachOutSubmitted}>
+                            <div class="form-success" role="status">
+                                Thank you. Your enquiry has been received.
+                            </div>
+                        </template>
+                        <template if:true={reachOutStatus}>
+                            <div class="form-success" role="status">
+                                {reachOutStatus}
+                            </div>
+                        </template>
+                        <form action={webToLeadAction} method="POST" onsubmit={handleReachOutSubmit} class="reach-out-form">
+                            <input type="hidden" name="oid" value={webToLeadOrgId} />
+                            <input type="hidden" name="retURL" value={webToLeadReturnUrl} />
+                            <input type="hidden" name="lead_source" value="TWW Website - Reach Out" />
+                            <input type="hidden" name="company" value="Individual / Website Inquiry" data-lead-company />
+                            <input type="hidden" name="description" data-lead-description />
+
+                            <div class="form-honeypot" aria-hidden="true">
+                                <label for="website">Website</label>
+                                <input id="website" type="text" tabindex="-1" autocomplete="off" data-honeypot />
+                            </div>
+
+                            <div class="form-grid">
+                                <label>
+                                    <span>First Name</span>
+                                    <input type="text" name="first_name" maxlength="40" required autocomplete="given-name" />
+                                </label>
+                                <label>
+                                    <span>Last Name</span>
+                                    <input type="text" name="last_name" maxlength="80" required autocomplete="family-name" />
+                                </label>
+                            </div>
+
+                            <label>
+                                <span>Email</span>
+                                <input type="email" name="email" maxlength="80" required autocomplete="email" />
+                            </label>
+
+                            <label>
+                                <span>Mobile Number</span>
+                                <input type="tel" name="phone" maxlength="40" autocomplete="tel" />
+                            </label>
+
+                            <label>
+                                <span>Organization</span>
+                                <input type="text" maxlength="255" autocomplete="organization" data-organization />
+                            </label>
+
+                            <label>
+                                <span>I want to</span>
+                                <select required data-inquiry-type>
+                                    <option value="">Select an option</option>
+                                    <option value="Volunteer">Volunteer</option>
+                                    <option value="Discuss CSR or partnership">Discuss CSR or partnership</option>
+                                    <option value="Contribute resources">Contribute resources</option>
+                                    <option value="Donate">Donate</option>
+                                    <option value="General enquiry">General enquiry</option>
+                                </select>
+                            </label>
+
+                            <label>
+                                <span>Message</span>
+                                <textarea rows="5" required data-message></textarea>
+                            </label>
+
+                            <button type="submit" class="btn-primary">Submit Enquiry</button>
+                        </form>
+                    </aside>
                 </div>
             </section>
         </template>
@@ -449,12 +537,15 @@
                         <span class="section-label">Legal and Compliance</span>
                         <h2>Policies that support trust and accountability</h2>
                         <p>
-                            The site identifies key policy areas for donor trust, beneficiary safety, and transparent operations. Full policy documents can be added as downloadable files as they are finalized.
+                            Access the current policy documents for donor trust, beneficiary safety, transparent operations, and responsible site use.
                         </p>
                     </article>
                     <aside class="legal-list">
                         <template for:each={legalItems} for:item="item">
-                            <div class="list-item" key={item}>{item}</div>
+                            <a class="list-item legal-link" key={item.id} href={item.url} target="_blank" rel="noopener noreferrer">
+                                <span>{item.label}</span>
+                                <span class="link-action">Open policy</span>
+                            </a>
                         </template>
                     </aside>
                 </div>
