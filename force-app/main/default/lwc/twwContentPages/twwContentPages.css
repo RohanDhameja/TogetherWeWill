@@ -767,6 +767,35 @@
     color: var(--color-white);
 }
 
+.footer-credit {
+    margin-top: 2rem;
+    padding-top: 1.35rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.inclusiveheart-credit {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.inclusiveheart-credit img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.94);
+}
+
+.inclusiveheart-credit span {
+    color: rgba(255, 255, 255, 0.74);
+    line-height: 1.4;
+}
+
+.inclusiveheart-credit strong {
+    color: var(--color-white);
+}
+
 @media (max-width: 1040px) {
     .nav-menu {
         display: none;
@@ -879,6 +908,10 @@
     .report-row {
         align-items: flex-start;
         flex-direction: column;
+    }
+
+    .inclusiveheart-credit {
+        align-items: flex-start;
     }
 
     .photo-card img {

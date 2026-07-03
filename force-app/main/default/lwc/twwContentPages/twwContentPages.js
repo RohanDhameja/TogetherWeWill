@@ -1,6 +1,7 @@
 import { LightningElement } from 'lwc';
 import { NavigationMixin } from 'lightning/navigation';
 import FOUNDATION_LOGO from '@salesforce/resourceUrl/FoundationLogo';
+import INCLUSIVE_HEART_LOGO from '@salesforce/resourceUrl/InclusiveHeartLogo';
 import SITE_IMAGES from '@salesforce/resourceUrl/TWW_Site_Images';
 import PRIVACY_POLICY from '@salesforce/resourceUrl/TWW_Privacy_Policy';
 import TERMS_AND_CONDITIONS from '@salesforce/resourceUrl/TWW_Terms_and_Conditions';
@@ -1058,6 +1059,7 @@ const PAGES = {
 
 export default class TwwContentPages extends NavigationMixin(LightningElement) {
     foundationLogo = FOUNDATION_LOGO;
+    inclusiveHeartLogo = INCLUSIVE_HEART_LOGO;
     heroBackground = asset('home_yoga.jpg');
     aboutImage = asset('about_cover.jpg');
     visionImage = asset('vision_graphic.jpg');

@@ -1,6 +1,7 @@
 import { LightningElement } from 'lwc';
 import { NavigationMixin } from 'lightning/navigation';
 import FOUNDATION_LOGO from '@salesforce/resourceUrl/FoundationLogo';
+import INCLUSIVE_HEART_LOGO from '@salesforce/resourceUrl/InclusiveHeartLogo';
 import SITE_IMAGES from '@salesforce/resourceUrl/TWW_Site_Images';
 
 const image = (fileName) => `${SITE_IMAGES}/${fileName}`;
@@ -65,6 +66,7 @@ const FUTURE_PLANS = [
 
 export default class TwwHomePageV2 extends NavigationMixin(LightningElement) {
     foundationLogo = FOUNDATION_LOGO;
+    inclusiveHeartLogo = INCLUSIVE_HEART_LOGO;
     heroImage = image('home_yoga.jpg');
     aboutImage = image('about_cover.jpg');
     impactStoryImage = image('impact_story.jpg');
