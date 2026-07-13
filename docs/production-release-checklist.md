@@ -142,6 +142,15 @@ Check these items:
 - Reach Out to Us / Web-to-Lead form renders.
 - Mobile layout remains readable.
 
+For a repeatable command-line check, run:
+
+```bash
+bash scripts/validate-public-site.sh
+```
+
+See `docs/public-url-validation.md` for the full public URL validation
+checklist.
+
 Use a cache-busting query string if cached content appears during testing:
 
 ```text
