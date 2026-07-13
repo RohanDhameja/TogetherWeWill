@@ -224,6 +224,9 @@ Look for:
 - Donation and legal document links open
 - Reach Out to Us / Web-to-Lead form renders as expected
 
+For the repeatable URL checklist and script, see
+`docs/public-url-validation.md`.
+
 If cached content appears, append a cache-busting query string while testing:
 
 ```text
