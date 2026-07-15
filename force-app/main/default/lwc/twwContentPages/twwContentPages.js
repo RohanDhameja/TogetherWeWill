@@ -314,7 +314,7 @@ const LEGAL_ITEMS = [
     { id: 'donation', label: 'Donation Policy', url: DONATION_POLICY }
 ];
 
-const detailPage = ({ key, label, title, intro, image, stats, sections, relatedLinks }) => ({
+const detailPage = ({ key, label, title, intro, image, imageAlt, stats, sections, relatedLinks }) => ({
     key,
     template: 'initiativeDetail',
     section: 'initiatives',
@@ -322,6 +322,7 @@ const detailPage = ({ key, label, title, intro, image, stats, sections, relatedL
     title,
     intro,
     image,
+    imageAlt: imageAlt || `${title} initiative image`,
     stats,
     sections,
     relatedLinks
@@ -1123,7 +1124,8 @@ export default class TwwContentPages extends NavigationMixin(LightningElement) {
         return NAV_ITEMS.map((item) => ({
             ...item,
             href: sitePath(item.path),
-            className: item.key === activeSection ? 'nav-link nav-link-active' : 'nav-link'
+            className: item.key === activeSection ? 'nav-link nav-link-active' : 'nav-link',
+            ariaCurrent: item.key === activeSection ? 'page' : null
         }));
     }
 
@@ -1206,8 +1208,14 @@ export default class TwwContentPages extends NavigationMixin(LightningElement) {
     get initiatives() {
         return INITIATIVES.map((initiative) => ({
             ...initiative,
-            href: sitePath(initiative.href)
+            href: sitePath(initiative.href),
+            imageAlt: initiative.imageAlt || `${initiative.title} initiative image`,
+            linkLabel: `Read more about ${initiative.title}`
         }));
+    }
+
+    get pageImageAlt() {
+        return this.page.imageAlt || `${this.page.title} program image`;
     }
 
     get initiativeSections() {
@@ -1217,7 +1225,8 @@ export default class TwwContentPages extends NavigationMixin(LightningElement) {
     get initiativeRelatedLinks() {
         return (this.page.relatedLinks || []).map((link) => ({
             ...link,
-            href: sitePath(link.href)
+            href: sitePath(link.href),
+            ariaLabel: `Read more about ${link.title}`
         }));
     }
 
@@ -1246,7 +1255,10 @@ export default class TwwContentPages extends NavigationMixin(LightningElement) {
     }
 
     get reports() {
-        return REPORTS;
+        return REPORTS.map((report) => ({
+            ...report,
+            ariaLabel: `Open ${report.label} in a new tab`
+        }));
     }
 
     get bankDetails() {
@@ -1254,15 +1266,24 @@ export default class TwwContentPages extends NavigationMixin(LightningElement) {
     }
 
     get socialLinks() {
-        return SOCIAL_LINKS;
+        return SOCIAL_LINKS.map((link) => ({
+            ...link,
+            imageAlt: `QR code for Together We Will on ${link.label}`
+        }));
     }
 
     get contactImages() {
-        return CONTACT_IMAGES;
+        return CONTACT_IMAGES.map((item) => ({
+            ...item,
+            imageAlt: item.label
+        }));
     }
 
     get legalItems() {
-        return LEGAL_ITEMS;
+        return LEGAL_ITEMS.map((item) => ({
+            ...item,
+            ariaLabel: `Open ${item.label} in a new tab`
+        }));
     }
 
     get webToLeadAction() {

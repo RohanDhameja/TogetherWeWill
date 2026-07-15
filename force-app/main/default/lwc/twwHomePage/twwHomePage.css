@@ -122,6 +122,13 @@
     color: var(--tww-primary);
 }
 
+.cta-button:focus-visible,
+.cta-button-secondary:focus-visible,
+.btn-link:focus-visible {
+    outline: 3px solid var(--tww-accent);
+    outline-offset: 3px;
+}
+
 /* ========================================
    Sections
    ======================================== */

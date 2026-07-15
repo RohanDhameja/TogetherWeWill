@@ -8,29 +8,29 @@
 -->
 <template>
     <div if:true={isModalOpen}>
-        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_large" aria-modal="true">
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_large" aria-modal="true" aria-labelledby="volunteer-web-case-heading" aria-describedby="volunteer-web-case-description">
             <div class="slds-modal__container">
                 <!-- Modal Header -->
                 <header class="slds-modal__header">
-                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" 
-                            title="Close" onclick={closeModal}>
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Close" onclick={closeModal} aria-label="Close volunteer registration form">
                         <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
                         <span class="slds-assistive-text">Close</span>
                     </button>
-                    <h2 class="slds-modal__title slds-hyphenate">Join as Volunteer</h2>
-                    <p class="slds-m-top_x-small">Join us in making a difference. Fill out the form below to register as a volunteer.</p>
+                    <h2 id="volunteer-web-case-heading" class="slds-modal__title slds-hyphenate">Join as Volunteer</h2>
+                    <p id="volunteer-web-case-description" class="slds-m-top_x-small">Join us in making a difference. Fill out the form below to register as a volunteer.</p>
                 </header>
                 
                 <!-- Modal Body -->
                 <div class="slds-modal__content slds-p-around_medium" id="modal-content">
                     <template if:true={errorMessage}>
-                        <div class="slds-notify slds-notify_alert slds-alert_error" role="alert">
+                        <div class="slds-notify slds-notify_alert slds-alert_error" role="alert" aria-live="assertive">
                             <span class="slds-assistive-text">error</span>
                             <h2>{errorMessage}</h2>
                         </div>
                     </template>
-                    
-                    <form>
+
+                    <form aria-label="Volunteer registration form">
                         <!-- Personal Information Section -->
                         <div class="slds-section slds-is-open">
                             <h3 class="slds-section__title slds-theme_shade">
@@ -188,8 +188,8 @@
                 
                 <!-- Modal Footer -->
                 <footer class="slds-modal__footer">
-                    <button class="slds-button slds-button_neutral" onclick={closeModal}>Cancel</button>
-                    <button class="slds-button slds-button_brand" onclick={handleSubmit} disabled={isSubmitting}>
+                    <button class="slds-button slds-button_neutral" onclick={closeModal} aria-label="Cancel volunteer registration">Cancel</button>
+                    <button class="slds-button slds-button_brand" onclick={handleSubmit} disabled={isSubmitting} aria-label="Submit volunteer registration">
                         <template if:false={isSubmitting}>
                             Submit Registration
                         </template>
