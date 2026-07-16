@@ -1,1 +1,5 @@
 /* Volunteer Web-to-Case Form CSS */
+.slds-button:focus-visible {
+    outline: 3px solid #f5a524;
+    outline-offset: 3px;
+}

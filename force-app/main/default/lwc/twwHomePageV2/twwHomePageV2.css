@@ -79,6 +79,19 @@
     background: rgba(27, 94, 32, 0.09);
 }
 
+.nav-logo:focus-visible,
+.nav-link:focus-visible,
+.btn-nav-donate:focus-visible,
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.btn-cta-primary:focus-visible,
+.btn-cta-secondary:focus-visible,
+.card-body a:focus-visible,
+.footer-section a:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
 .btn-nav-donate,
 .btn-primary,
 .btn-secondary,

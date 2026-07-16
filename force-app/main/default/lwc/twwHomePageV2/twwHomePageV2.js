@@ -58,37 +58,49 @@ const FOCUS_AREAS = [
         id: 'education',
         title: 'Education',
         description: 'Empowering children with access to quality education, digital learning, and opportunities to achieve their full potential.',
-        image: image('bal_shiksha.jpg')
+        image: image('bal_shiksha.jpg'),
+        imageAlt: 'Children participating in a Together We Will education program',
+        linkLabel: 'Explore Together We Will education initiatives'
     },
     {
         id: 'child-welfare',
         title: 'Child Welfare',
         description: 'Supporting vulnerable children through protection, care, development, and nurturing environments.',
-        image: image('child_home.jpg')
+        image: image('child_home.jpg'),
+        imageAlt: 'Children supported through Together We Will child welfare programs',
+        linkLabel: 'Explore Together We Will child welfare initiatives'
     },
     {
         id: 'children-healthcare',
         title: 'Children Healthcare',
         description: 'Promoting healthier futures through health screenings, awareness, medical support, and preventive care.',
-        image: image('healthcare.jpg')
+        image: image('healthcare.jpg'),
+        imageAlt: 'Healthcare support activity for children and families',
+        linkLabel: 'Explore Together We Will children healthcare initiatives'
     },
     {
         id: 'mental-wellbeing',
         title: 'Mental Well-being',
         description: 'Strengthening emotional resilience and mental wellness for children, youth, and communities.',
-        image: image('psychology.jpg')
+        image: image('psychology.jpg'),
+        imageAlt: 'Mental well-being and counseling support session',
+        linkLabel: 'Explore Together We Will mental well-being initiatives'
     },
     {
         id: 'skill-development',
         title: 'Skill Development',
         description: 'Transforming skills into livelihoods through vocational training, entrepreneurship, and empowerment programs.',
-        image: image('skill_development.jpg')
+        image: image('skill_development.jpg'),
+        imageAlt: 'Skill development and livelihood training session',
+        linkLabel: 'Explore Together We Will skill development initiatives'
     },
     {
         id: 'rural-transformation',
         title: 'Rural Transformation',
         description: 'Building sustainable and self-reliant communities through integrated rural development initiatives.',
-        image: image('rural_library.jpg')
+        image: image('rural_library.jpg'),
+        imageAlt: 'Rural community learning space supported by Together We Will',
+        linkLabel: 'Explore Together We Will rural transformation initiatives'
     }
 ];
 
@@ -141,7 +153,8 @@ export default class TwwHomePageV2 extends NavigationMixin(LightningElement) {
         return NAV_ITEMS.map((item) => ({
             ...item,
             href: sitePath(item.path),
-            className: item.key === 'home' ? 'nav-link nav-link-active' : 'nav-link'
+            className: item.key === 'home' ? 'nav-link nav-link-active' : 'nav-link',
+            ariaCurrent: item.key === 'home' ? 'page' : null
         }));
     }
 

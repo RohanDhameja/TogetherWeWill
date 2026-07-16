@@ -1,16 +1,16 @@
 <template>
     <header class="navbar">
         <div class="nav-container">
-            <a class="nav-logo" href={homeHref}>
-                <img src={foundationLogo} alt="TWW Logo" class="logo-img" />
+            <a class="nav-logo" href={homeHref} aria-label="Together We Will Foundation home">
+                <img src={foundationLogo} alt="" class="logo-img" />
                 <span class="logo-text">Together We Will</span>
             </a>
-            <nav class="nav-menu">
+            <nav class="nav-menu" aria-label="Primary navigation">
                 <template for:each={navItems} for:item="item">
-                    <a key={item.key} href={item.href} class={item.className}>{item.label}</a>
+                    <a key={item.key} href={item.href} class={item.className} aria-current={item.ariaCurrent}>{item.label}</a>
                 </template>
             </nav>
-            <button class="btn-nav-donate" onclick={handleDonate}>Donate</button>
+            <button class="btn-nav-donate" onclick={handleDonate} aria-label="Donate to Together We Will Foundation">Donate</button>
         </div>
     </header>
 
@@ -45,7 +45,7 @@
                         </p>
                     </article>
                     <aside class="photo-card">
-                        <img src={aboutImage} alt="Together We Will community activity" />
+                        <img src={aboutImage} alt="Together We Will volunteers and community members during a program activity" />
                     </aside>
                 </div>
             </section>
@@ -53,12 +53,12 @@
             <section class="content-section muted">
                 <div class="container two-card-grid">
                     <article class="statement-card">
-                        <img src={visionImage} alt="Vision graphic" />
+                        <img src={visionImage} alt="" />
                         <h3>Our Vision</h3>
                         <p>To create a world where every child and community has access to opportunities, support, and resources needed to live with dignity, realize their full potential, and contribute meaningfully to society.</p>
                     </article>
                     <article class="statement-card">
-                        <img src={missionImage} alt="Mission graphic" />
+                        <img src={missionImage} alt="" />
                         <h3>Our Mission</h3>
                         <p>To empower underprivileged children and communities through initiatives in child welfare, education, health, skill development, and community transformation by mobilizing volunteers, fostering partnerships, and creating sustainable opportunities that enable individuals to lead dignified, self-reliant, and fulfilling lives.</p>
                     </article>
@@ -134,13 +134,13 @@
                     <div class="initiative-grid">
                         <template for:each={initiatives} for:item="initiative">
                             <article class="initiative-card" key={initiative.id}>
-                                <img src={initiative.image} alt={initiative.title} />
+                                <img src={initiative.image} alt={initiative.imageAlt} />
                                 <div class="initiative-body">
                                     <span>{initiative.category}</span>
                                     <h3>{initiative.title}</h3>
                                     <p>{initiative.description}</p>
                                     <strong>{initiative.metric}</strong>
-                                    <a href={initiative.href} class="initiative-link">Read More</a>
+                                    <a href={initiative.href} class="initiative-link" aria-label={initiative.linkLabel}>Read More</a>
                                 </div>
                             </article>
                         </template>
@@ -163,7 +163,7 @@
                         </div>
                     </article>
                     <aside class="photo-card">
-                        <img src={ruralHospitalImage} alt="Rural transformation facility" />
+                        <img src={ruralHospitalImage} alt="Rural transformation healthcare facility supported by Together We Will" />
                     </aside>
                 </div>
             </section>
@@ -178,7 +178,7 @@
                         <p>{page.intro}</p>
                     </article>
                     <aside class="photo-card detail-image-panel">
-                        <img src={page.image} alt={page.title} />
+                        <img src={page.image} alt={pageImageAlt} />
                     </aside>
                 </div>
             </section>
@@ -218,7 +218,7 @@
                                 <article class="related-card" key={link.id}>
                                     <h3>{link.title}</h3>
                                     <p>{link.description}</p>
-                                    <a href={link.href} class="initiative-link">Read More</a>
+                                    <a href={link.href} class="initiative-link" aria-label={link.ariaLabel}>Read More</a>
                                 </article>
                             </template>
                         </div>
@@ -254,7 +254,7 @@
                         <p>Proud to say: once a beneficiary, now a supporter. We are impacting lives, and Together We Will.</p>
                     </article>
                     <aside class="photo-card">
-                        <img src={impactStoryImage} alt="TWW impact success story" />
+                        <img src={impactStoryImage} alt="Together We Will beneficiary success story" />
                     </aside>
                 </div>
             </section>
@@ -271,7 +271,7 @@
                                     <p>{report.status}</p>
                                 </div>
                                 <template if:true={report.url}>
-                                    <a href={report.url} target="_blank" rel="noopener" class="btn-primary">Open</a>
+                                    <a href={report.url} target="_blank" rel="noopener" class="btn-primary" aria-label={report.ariaLabel}>Open report</a>
                                 </template>
                             </article>
                         </template>
@@ -296,8 +296,8 @@
                         </div>
                     </article>
                     <aside class="partner-visuals">
-                        <img src={partnersCsrImage} alt="TWW CSR partners" />
-                        <img src={partnersGovtImage} alt="TWW government and NGO partners" />
+                        <img src={partnersCsrImage} alt="Together We Will CSR partnership visual" />
+                        <img src={partnersGovtImage} alt="Together We Will government and NGO partnership visual" />
                     </aside>
                 </div>
             </section>
@@ -315,7 +315,7 @@
                         </p>
                     </article>
                     <aside class="partner-visuals">
-                        <img src={consortiumImage} alt="TWW consortium partner responsibilities" />
+                        <img src={consortiumImage} alt="Together We Will consortium partner responsibilities" />
                     </aside>
                 </div>
             </section>
@@ -350,7 +350,7 @@
                             </article>
                         </template>
                     </div>
-                    <a class="btn-primary section-action" href={reachOutHref}>Reach Out to Us</a>
+                    <a class="btn-primary section-action" href={reachOutHref} aria-label="Open the Reach Out to Us enquiry form">Reach Out to Us</a>
                 </div>
             </section>
         </template>
@@ -371,16 +371,16 @@
                     </article>
                     <aside class="reach-out-card">
                         <template if:true={showReachOutSubmitted}>
-                            <div class="form-success" role="status">
+                            <div class="form-success" role="status" aria-live="polite">
                                 Thank you. Your enquiry has been received.
                             </div>
                         </template>
                         <template if:true={reachOutStatus}>
-                            <div class="form-success" role="status">
+                            <div class="form-success" role="status" aria-live="polite">
                                 {reachOutStatus}
                             </div>
                         </template>
-                        <form action={webToLeadAction} method="POST" onsubmit={handleReachOutSubmit} class="reach-out-form">
+                        <form action={webToLeadAction} method="POST" onsubmit={handleReachOutSubmit} class="reach-out-form" aria-label="Reach out enquiry form">
                             <input type="hidden" name="oid" value={webToLeadOrgId} />
                             <input type="hidden" name="retURL" value={webToLeadReturnUrl} />
                             <input type="hidden" name="lead_source" value="TWW Website - Reach Out" />
@@ -435,7 +435,7 @@
                                 <textarea rows="5" required data-message></textarea>
                             </label>
 
-                            <button type="submit" class="btn-primary">Submit Enquiry</button>
+                            <button type="submit" class="btn-primary" aria-label="Submit reach out enquiry">Submit Enquiry</button>
                         </form>
                     </aside>
                 </div>
@@ -458,7 +458,7 @@
                     <aside class="social-grid">
                         <template for:each={socialLinks} for:item="link">
                             <article class="social-card" key={link.id}>
-                                <img src={link.image} alt={link.label} />
+                                <img src={link.image} alt={link.imageAlt} />
                                 <h3>{link.label}</h3>
                             </article>
                         </template>
@@ -476,8 +476,8 @@
                         <div class="contact-card">
                             <h3>Munish Pandhi</h3>
                             <p>Chairman and Managing Trustee</p>
-                            <p><strong>Mobile:</strong> +91 9899703571</p>
-                            <p><strong>Email:</strong> munish.pandhi@gmail.com / togetherwewill2021@gmail.com</p>
+                            <p><strong>Mobile:</strong> <a href="tel:+919899703571">+91 9899703571</a></p>
+                            <p><strong>Email:</strong> <a href="mailto:munish.pandhi@gmail.com">munish.pandhi@gmail.com</a> / <a href="mailto:togetherwewill2021@gmail.com">togetherwewill2021@gmail.com</a></p>
                             <p><strong>WhatsApp chatbot:</strong> 9220119110</p>
                             <p><strong>Address:</strong> 11 FF Kanishka Residency, Ashoka Enclave - 3, Sector 35, Faridabad, Haryana, India - 121003</p>
                         </div>
@@ -495,7 +495,7 @@
                     <div class="contact-visual-grid">
                         <template for:each={contactImages} for:item="item">
                             <article class="contact-visual-card" key={item.id}>
-                                <img src={item.image} alt={item.label} />
+                                <img src={item.image} alt={item.imageAlt} />
                                 <h3>{item.label}</h3>
                             </article>
                         </template>
@@ -523,7 +523,7 @@
                         </div>
                     </article>
                     <aside class="qr-card">
-                        <img src={donationQrImage} alt="UPI donation QR code" />
+                        <img src={donationQrImage} alt="UPI QR code for donations to Together We Will Foundation" />
                         <h3>QR Code for UPI donation</h3>
                     </aside>
                 </div>
@@ -542,7 +542,7 @@
                     </article>
                     <aside class="legal-list">
                         <template for:each={legalItems} for:item="item">
-                            <a class="list-item legal-link" key={item.id} href={item.url} target="_blank" rel="noopener noreferrer">
+                            <a class="list-item legal-link" key={item.id} href={item.url} target="_blank" rel="noopener noreferrer" aria-label={item.ariaLabel}>
                                 <span>{item.label}</span>
                                 <span class="link-action">Open policy</span>
                             </a>
@@ -575,28 +575,28 @@
                 <h4>Together We Will Foundation</h4>
                 <p>Volunteer-driven, partnership-led, and committed to a zero operating cost model for maximum beneficiary impact.</p>
             </div>
-            <div>
+            <nav aria-label="Footer quick links">
                 <h5>Quick Links</h5>
                 <template for:each={footerPrimaryLinks} for:item="link">
                     <a key={link.id} href={link.href}>{link.label}</a>
                 </template>
-            </div>
-            <div>
+            </nav>
+            <nav aria-label="Footer get involved links">
                 <h5>Get Involved</h5>
                 <template for:each={footerActionLinks} for:item="link">
                     <a key={link.id} href={link.href}>{link.label}</a>
                 </template>
-            </div>
+            </nav>
             <div>
                 <h5>Contact</h5>
                 <p>Munish Pandhi</p>
-                <p>+91 9899703571</p>
-                <p>togetherwewill2021@gmail.com</p>
+                <a href="tel:+919899703571">+91 9899703571</a>
+                <a href="mailto:togetherwewill2021@gmail.com">togetherwewill2021@gmail.com</a>
                 <p>WhatsApp chatbot: 9220119110</p>
             </div>
         </div>
         <div class="container footer-credit">
-            <a class="inclusiveheart-credit" href="https://inclusiveheart.org" target="_blank" rel="noopener noreferrer">
+            <a class="inclusiveheart-credit" href="https://inclusiveheart.org" target="_blank" rel="noopener noreferrer" aria-label="Visit InclusiveHeart website, opens in a new tab">
                 <img src={inclusiveHeartLogo} alt="InclusiveHeart logo" />
                 <span>Developed and designed by <strong>InclusiveHeart</strong></span>
             </a>
